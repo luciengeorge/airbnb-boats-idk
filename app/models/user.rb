@@ -5,4 +5,7 @@ class User < ApplicationRecord
          :timeoutable
   has_many :boats
   has_many :reviews
+  has_many :bookings
+  validates :name, presence: true
+  validates :email, presence: true, uniqueness: true
 end

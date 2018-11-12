@@ -3,6 +3,7 @@ Rails.application.routes.draw do
 
   resources :boats do
     resources :reviews, only: %i[create destroy]
+    resources :bookings, only: %i[index create destroy]
   end
   root to: 'pages#home'
 
