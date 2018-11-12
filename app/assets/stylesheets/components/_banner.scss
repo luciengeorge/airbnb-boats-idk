@@ -1,5 +1,5 @@
 .banner {
-  color: white;
+  color: black;
   height: 80vh;
   background-position: center;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
@@ -16,7 +16,30 @@
 .banner p {
   font-size: 25px;
   font-weight: lighter;
-  color: rgb(255, 255, 255);
+  color: black;
   opacity: 0.6;
   margin-bottom: 30px;
+}
+
+.form-home-page {
+  background-color: transparent;
+  margin-left: 20px;
+}
+
+.form-search-home {
+  margin: 20px;
+}
+
+#location {
+  color: black;
+  width: 450px;
+  height: 60px;
+  border-radius: 5px;
+}
+
+.btn-homepage {
+  height: 60px !important;
+  width: 168px !important;
+  border-radius: 5px !important;
+  color: gray;
 }
