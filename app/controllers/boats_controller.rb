@@ -5,6 +5,7 @@ class BoatsController < ApplicationController
   end
 
   def show
+    @review = Review.new
   end
 
   def new
@@ -33,7 +34,7 @@ class BoatsController < ApplicationController
   end
 
   def destroy
-    @boat.delete
+    @boat.destroy
     redirect_to boats_path
   end
 
