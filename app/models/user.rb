@@ -3,4 +3,5 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :omniauthable,
          :timeoutable
+  has_many :boats
 end
