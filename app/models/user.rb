@@ -4,4 +4,5 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :omniauthable,
          :timeoutable
   has_many :boats
+  has_many :reviews
 end
