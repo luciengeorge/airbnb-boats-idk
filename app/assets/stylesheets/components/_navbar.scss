@@ -37,7 +37,7 @@
 
 /* Navbar link */
 .navbar-wagon-link {
-  color: #616668;
+  color: black;
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
@@ -54,7 +54,7 @@
 .navbar-wagon-dropdown-menu li > a {
   transition: color 0.3s ease;
   font-weight: lighter !important;
-  color: #999999 !important;
+  color: black !important;
   font-size: 15px !important;
   line-height: 22px !important;
   padding: 10px 20px;
@@ -74,4 +74,14 @@
   transform: rotate(45deg);
   border-left: 1px solid #E6E6E6;
   border-top: 1px solid #E6E6E6;
+}
+
+
+.logo-text {
+  text-decoration: none;
+  color: black;
+  letter-spacing: 3px;
+  &:hover {
+    text-decoration: none;
+  }
 }
