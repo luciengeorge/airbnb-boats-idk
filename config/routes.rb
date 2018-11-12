@@ -2,7 +2,9 @@ Rails.application.routes.draw do
   devise_for :users
 
   resources :users, only: %i[edit update destroy show] do
-    resources :boats
+    resources :boats do
+      resources :reviews, only: %i[create destroy]
+    end
   end
   root to: 'pages#home'
 
