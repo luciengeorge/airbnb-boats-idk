@@ -1,4 +1,5 @@
 class BoatsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :find_boat, only: [:show, :edit, :update]
   def index
     @boats = Boat.all
@@ -14,7 +15,8 @@ class BoatsController < ApplicationController
 
   def create
     @boat = Boat.new(boat_params)
-    if @boat.save
+    @boat.user = current_user
+    if @boat.save!
       redirect_to boats_path
     else
       render :new
@@ -26,7 +28,7 @@ class BoatsController < ApplicationController
 
   def update
     @boat.update(boat_params)
-    if @boat.save
+    if @boat.save!
       redirect_to boat_path(@boat)
     else
       render :edit
@@ -45,6 +47,6 @@ class BoatsController < ApplicationController
   end
 
   def boat_params
-    params.require(:boat).permit(:name, :description, :location, :capacity, :length, :price_per_week, :type)
+    params.require(:boat).permit(:name, :description, :location, :capacity, :length, :price_per_week, :category, :available)
   end
 end
