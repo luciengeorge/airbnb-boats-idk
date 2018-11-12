@@ -1,0 +1,13 @@
+<h1>Show page</h1>
+<%= @boat.name %>
+<%= @boat.description %>
+<% @boat.reviews.each do |review| %>
+  <p><%= review.content %> - <%= review.rating %></p>
+<% end %>
+<%= form_for [@boat, @review] do |f| %>
+  <%= f.label :content, 'Content' %>
+  <%= f.text_field :content, class:"form-control" %>
+  <%= f.label :rating, 'Rating' %>
+  <%= f.select :rating, (1..5), class:"form-control" %>
+  <%= f.submit class:"btn btn-primary" %>
+<% end %>
