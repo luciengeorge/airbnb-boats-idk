@@ -1,0 +1,19 @@
+<%= form_for @boat do |f| %>
+  <%= f.label :name, 'Name' %>
+  <%= f.text_field :name, class:"form-control input" %>
+  <%= f.label :description, 'Description' %>
+  <%= f.text_field :description, class:"form-control input" %>
+  <%= f.label :location, 'Location' %>
+  <%= f.text_field :location, class:"form-control input" %>
+  <%= f.label :capacity, 'Capacity' %>
+  <%= f.text_field :capacity, class:"form-control input" %>
+  <%= f.label :length, 'Length of Boat' %>
+  <%= f.text_field :length, class:"form-control input" %>
+  <%= f.label :price_per_week, 'Price per week' %>
+  <%= f.text_field :price_per_week, class:"form-control input" %>
+  <%= f.label :type, 'Type of Yacht' %>
+  <%= f.select :category, ["Sail Boat", "Motorboat"], class:"form-control input" %>
+  <%= f.submit class:"btn btn-primary" %>
+<% end %>
+
+
