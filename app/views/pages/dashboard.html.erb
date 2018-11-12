@@ -1,0 +1,9 @@
+<div class="wrapper">
+  <div class="container">
+    <% @bookings.each do |booking| %>
+      <p><%= booking.user.name %> - <%= booking.boat.name %></p>
+      <p><%= booking.start_date %> -> <%= booking.end_date %></p>
+      <%= link_to "Back to #{booking.boat.name}", boat_path(booking.boat) %>
+    <% end %>
+  </div>
+</div>

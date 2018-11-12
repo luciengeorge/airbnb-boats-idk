@@ -1,0 +1,10 @@
+<% if @boat.errors.any? %>
+  <div class="error_explanation">
+    <h2><%= pluralize(@boat.errors.count, "error") %> prevented this boat from being saved:</h2>
+    <ul>
+    <% @boat.errors.full_messages.each do |msg| %>
+      <li><%= msg %></li>
+    <% end %>
+    </ul>
+  </div>
+<% end %>

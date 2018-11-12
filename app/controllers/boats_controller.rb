@@ -7,6 +7,7 @@ class BoatsController < ApplicationController
 
   def show
     @review = Review.new
+    @booking = Booking.new
   end
 
   def new
@@ -16,7 +17,7 @@ class BoatsController < ApplicationController
   def create
     @boat = Boat.new(boat_params)
     @boat.user = current_user
-    if @boat.save!
+    if @boat.save
       redirect_to boats_path
     else
       render :new

@@ -1,4 +1,5 @@
 <%= form_for @boat do |f| %>
+  <%= render 'shared/error_messages' %>
   <%= f.label :name, 'Name' %>
   <%= f.text_field :name, class:"form-control input" %>
   <%= f.label :description, 'Description' %>
