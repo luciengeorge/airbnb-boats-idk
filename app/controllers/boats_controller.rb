@@ -2,7 +2,12 @@ class BoatsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :find_boat, only: [:show, :edit, :update]
   def index
-    @boats = Boat.all
+    if params[:location]
+      # do search shit
+      @boats = Boat.where("location LIKE '%#{params[:location]}%'")
+    else
+      @boats = Boat.all
+    end
   end
 
   def show
