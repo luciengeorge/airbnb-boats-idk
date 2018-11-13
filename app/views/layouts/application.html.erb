@@ -11,7 +11,19 @@
   </head>
   <body>
     <%= render 'shared/navbar' %>
-    <%= render 'shared/flashes' %>
+    <% if notice %>
+      <div class="margin-div alert-info" style="height: 176px;">
+        <%= render 'shared/flashes' %>
+      </div>
+    <% elsif alert %>
+      <div class="margin-div alert-warning" style="height: 176px;">
+        <%= render 'shared/flashes' %>
+      </div>
+    <% else %>
+      <div class="margin-div" style="height: 176px;">
+        <%= render 'shared/flashes' %>
+      </div>
+    <% end %>
     <%= yield %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
