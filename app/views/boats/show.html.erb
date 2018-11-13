@@ -1,6 +1,12 @@
 <div class="wrapper">
   <div class="container">
     <h1>Show page</h1>
+    <ul>
+      <% @boat.photos.each do |photo| %>
+
+        <li><%= cl_image_tag photo %></li>
+      <% end %>
+    </ul>
     <%= @boat.name %>
     <%= @boat.description %>
     <% @boat.reviews.each do |review| %>

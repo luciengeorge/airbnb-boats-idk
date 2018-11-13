@@ -11,4 +11,5 @@ class Boat < ApplicationRecord
   validates :price_per_week, presence: true, numericality: { only_integer: true }
   validates :user, presence: true
   validates :available, presence: true
+  mount_uploaders :photos, PhotoUploader
 end
