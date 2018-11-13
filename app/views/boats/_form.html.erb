@@ -29,7 +29,10 @@
     <%= f.select :category, ["Sail Boat", "Motor Boat"], class:"form-control input" %>
   </div>
   <div class="form-group">
-    <%= f.file_field :photo, class:"upload-button justify-content-center" %>
+    <%= f.label :photo, "Add a photo" %>
+    <%= f.fields_for :photos do |p| %>
+      <%= p.file_field :url %>
+    <% end %>
   </div>
   <%= f.submit class:"btn btn-primary" %>
 <% end %>
