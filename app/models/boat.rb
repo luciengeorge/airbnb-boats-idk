@@ -1,6 +1,7 @@
 class Boat < ApplicationRecord
   belongs_to :user
   has_many :bookings
+  has_many :photos
   has_many :reviews
   validates :category, presence: true, inclusion: { in: ["Sail Boat", "Motor Boat"] }
   validates :name, presence: true

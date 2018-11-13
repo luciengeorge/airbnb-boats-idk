@@ -17,6 +17,7 @@ class BoatsController < ApplicationController
 
   def new
     @boat = Boat.new
+    @photo = Photo.new
   end
 
   def create

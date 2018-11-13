@@ -18,6 +18,11 @@ gem 'webpacker'
 gem 'devise'
 gem 'omniauth', '~> 1.0.0'
 
+# cloudinary gem
+gem 'cloudinary'
+# carrierwave gem
+gem 'carrierwave', '~> 1.2'
+
 group :development do
   gem 'web-console', '>= 3.3.0'
 end
