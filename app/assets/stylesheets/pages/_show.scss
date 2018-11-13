@@ -1,0 +1,20 @@
+ul{
+  list-style-type: none;
+}
+
+.boat-info {
+  text-align: center;
+  justify-content: center;
+}
+
+#boat-name {
+  font-size: 60px;
+  letter-spacing: 3px;
+}
+
+.horizontal-scroll-wrapper {
+  width: 100px;
+  height: 300px;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
