@@ -7,13 +7,15 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  width: 100%;
   position: absolute;
+  top: 0;
+  width: 100%;
   z-index: 10;
 }
 
 .slant {
   position: absolute;
+  top: 0;
   z-index: 5;
   height: 106px;
   width: 110%;

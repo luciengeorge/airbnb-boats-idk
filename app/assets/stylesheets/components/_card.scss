@@ -23,16 +23,11 @@ $txt-color:   #DCE3E7;
 .blog-card{
   width: $card-width;
   height: $card-height;
-  position: absolute;
+  position: relative;
   overflow: hidden;
   border-radius: 10px;
   box-shadow: 0px 0px 3px rgba(0,0,0,0.5);
   text-align: center;
-
-  &.spring-fever{
-    // background: url(https://images.pexels.com/photos/163236/luxury-yacht-boat-speed-water:-163236.jp;eg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260) no-repeat;
-  }
-
   .color-overlay{
     /* Rectangle 11: */
     background: rgba(0,0,0,0.1);
@@ -53,9 +48,12 @@ $txt-color:   #DCE3E7;
     width: $card-width;
     height: $card-height;
     position: absolute;
-    top: 500px;
+    top: 0;
+    right: 0;
+    bottom: 0;
     left: 0;
     z-index: 15;
+    opacity: 0.2;
   }
 
   &:hover{
@@ -77,6 +75,7 @@ $txt-color:   #DCE3E7;
   width: 100%;
   bottom: 10px;
 }
+
 h3{
   font-size: 30px;
   font-weight: 500;
