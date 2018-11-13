@@ -1,0 +1,70 @@
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title sign-in-header" id="exampleModalLabel">SIGN IN</h5>
+        <h5 class="modal-title sign-up-header" id="exampleModalLabel" style="display: none">SIGN UP</h5>
+
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span class="close_sign_up" aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div id="sign-in-modal">
+          <%= form_for(:user, :url => session_path(:user)) do |f| %>
+            <div class="sign-in-body">
+              <div><%= f.label :email, class: 'form-labels' %></div>
+              <div><%= f.text_field :email, class: 'form-input' %></div>
+              <div><%= f.label :password, class: 'form-labels' %></div>
+              <div><%= f.password_field :password, class: 'form-input' %></div>
+              <div><%= f.check_box :remember_me %>
+              <%= f.label :remember_me, class: 'form-labels remember_me' %></div>
+              <div>
+              <div><%= link_to "Forgot your password?", new_password_path(:user), class: "forgot-password-link" %>
+              </div>
+              <div><a id="sign-up-tab">Sign Up</a></div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <%= f.submit 'Sign in', class: 'btn' %>
+            </div>
+          <% end %>
+          </div>
+        </div>
+
+         <div id="sign-up-modal" style="display: none">
+          <%= form_for(:user, :url => user_registration_path) do |f| %>
+            <div class="sign-up-body">
+              <div><%= f.label :name, class: 'form-labels' %></div>
+              <div><%= f.text_field :name, class: 'form-input' %></div>
+              <div><%= f.label :email, class: 'form-labels' %></div>
+              <div><%= f.text_field :email, class: 'form-input' %></div>
+              <div><%= f.label :password, class: 'form-labels' %></div>
+              <div><%= f.password_field :password, class: 'form-input' %></div>
+              <div><%= f.label :password_confirmation, class: 'form-labels' %></div>
+              <div><%= f.password_field :password_confirmation, class: 'form-input' %></div>
+              <div><%= f.check_box :remember_me %>
+              <%= f.label :remember_me, class: 'form-labels remember_me' %></div>
+              <div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <%= f.submit 'Sign up', class: 'btn' %>
+            </div>
+          <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.getElementById('sign-up-tab').addEventListener('click', (e) => {
+    e.preventDefault();
+    document.querySelector('.sign-in-header').style.display = 'none'
+    document.querySelector('.sign-up-header').style.display = 'block'
+    document.querySelector('#sign-in-modal').style.display = 'none'
+    document.querySelector('#sign-up-modal').style.display = 'block'
+  })
+</script>
