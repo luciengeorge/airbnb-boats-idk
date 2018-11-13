@@ -2,3 +2,23 @@
 <% @boats.each do |boat| %>
   <%= link_to boat.name, boat_path(boat) %>
   <% end %>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-6">
+      <div class="blog-card spring-fever boat-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.pexels.com/photos/163236/luxury-yacht-boat-speed-water-163236.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')">
+        <div class="title-content">
+          <h3>LUCIEN</h3>
+        </div>
+        <div class="card-info">
+          <p>LEBANON</p>
+          <p>SAIL BOAT</p>
+          <p><i class="fas fa-users"></i> 7</p>
+        </div><!-- /.card-info -->
+        <!-- overlays -->
+        <div class="gradient-overlay"></div>
+        <div class="color-overlay"></div>
+      </div>
+    </div>
+  </div>
+</div>
