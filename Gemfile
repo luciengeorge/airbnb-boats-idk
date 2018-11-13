@@ -17,6 +17,7 @@ gem 'uglifier'
 gem 'webpacker'
 gem 'devise'
 gem 'omniauth', '~> 1.0.0'
+gem 'jquery-rails'
 gem 'cloudinary'
 gem 'carrierwave'
 

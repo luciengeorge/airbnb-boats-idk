@@ -1,5 +1,13 @@
-<div class="container">
-  <div class="banner" style="background-image: url(<%= "https://source.unsplash.com/400x400/?yacht&sig=#{(1..1000).to_a.sample}" %>);">
+<div class="banner-show">
+  <div class="container" style="width: 140vw; margin-left: -20vw">
+    <div class="show-carousel row">
+      <div><img src="https://images.unsplash.com/photo-1500627964684-141351970a7f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=395eadce669333e3b0263f8725b21fdf&auto=format&fit=crop&w=634&q=80" alt="" class="carousel-image"></div>
+      <div><img src="https://images.unsplash.com/photo-1500627964684-141351970a7f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=395eadce669333e3b0263f8725b21fdf&auto=format&fit=crop&w=634&q=80" alt="" class="carousel-image"></div>
+      <div><img src="https://images.unsplash.com/photo-1500627964684-141351970a7f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=395eadce669333e3b0263f8725b21fdf&auto=format&fit=crop&w=634&q=80" alt="" class="carousel-image"></div>
+      <div><img src="https://images.unsplash.com/photo-1500627964684-141351970a7f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=395eadce669333e3b0263f8725b21fdf&auto=format&fit=crop&w=634&q=80" alt="" class="carousel-image"></div>
+      <div><img src="https://images.unsplash.com/photo-1500627964684-141351970a7f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=395eadce669333e3b0263f8725b21fdf&auto=format&fit=crop&w=634&q=80" alt="" class="carousel-image"></div>
+      <div><img src="https://images.unsplash.com/photo-1500627964684-141351970a7f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=395eadce669333e3b0263f8725b21fdf&auto=format&fit=crop&w=634&q=80" alt="" class="carousel-image"></div>
+    </div>
   </div>
 </div>
 <div class="wrapper">
@@ -20,54 +28,68 @@
         <li><strong>Type of Boat:</strong> <%= @boat.category %></li>
       </ul>
     </div>
-    <div>
-      <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    <div class="btn-show">
+      <button type="button" class="btn btn-default btn-homepage" data-toggle="modal" data-target="#exampleModalCenter">
         Book Now
       </button>
     </div>
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h2 class="modal-title" id="exampleModalLongTitle">Book this boat</h2>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-              <span aria-hidden="true">&times;</span>
-            </button>
-          </div>
-          <%= form_for [@boat, @booking] do |f| %>
-            <div class="modal-body">
-              <div class="form-group">
-                <%= f.label :start_date, 'Check-in' %>
-                <%= f.date_select :start_date, class:"form-control input" %>
-              </div>
-              <div class="form-group">
-                <%= f.label :end_date, 'Check-out' %>
-                <%= f.date_select :end_date, class:"form-control input" %>
-              </div>
-              <div class="form-group">
-                <%= f.label :guests, 'Guests' %>
-                <%= f.select :guests, (1..10), class:"form-control input" %>
-              </div>
-            </div>
-            <div class="modal-footer">
-              <%= f.submit 'Book!', class:"btn btn-primary" %>
-            </div>
-          <% end %>
-        </div>
-      </div>
-    </div>
     <div>
-      <% @boat.reviews.each do |review| %>
-      <p><%= review.content %> - <%= review.rating %></p>
-      <% end %>
       <%= form_for [@boat, @review] do |f| %>
       <%= f.label :content, 'Content' %>
       <%= f.text_field :content, class:"form-control", required: true %>
       <%= f.label :rating, 'Rating' %>
       <%= f.select :rating, (1..5), class:"form-control", required: true %>
-      <%= f.submit class:"btn btn-primary" %>
+      <%= f.submit class:"btn btn-default btn-homepage" %>
+      <% end %>
+    </div>
+    <div>
+      <% @boat.reviews.each do |review| %>
+      <p><%= review.content %> - <%= review.rating %></p>
       <% end %>
     </div>
   </div>
 </div>
-
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h2 class="modal-title" id="exampleModalLongTitle">Book this boat</h2>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <%= form_for [@boat, @booking] do |f| %>
+      <div class="modal-body">
+        <div class="form-group">
+          <%= f.label :start_date, 'Check-in' %>
+          <%= f.date_select :start_date, class:"form-control input" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :end_date, 'Check-out' %>
+          <%= f.date_select :end_date, class:"form-control input" %>
+        </div>
+        <div class="form-group">
+          <%= f.label :guests, 'Guests' %>
+          <%= f.select :guests, (1..10), class:"form-control input" %>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <%= f.submit 'Book!', class:"btn btn-default btn-homepage" %>
+      </div>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= content_for(:after_js) do %>
+<script>
+    $( document ).ready(function() {
+      $('.show-carousel').slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        arrows: true,
+        autoplay: true,
+      });
+    });
+  </script>
+  <% end %>
