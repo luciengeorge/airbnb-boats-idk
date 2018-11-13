@@ -1,9 +1,10 @@
+<div class="slant"></div>
 <div class="navbar-wagon">
   <!-- Logo -->
   <%= link_to root_path, class: "navbar-wagon-brand logo-text" do %>
     <h1 class="logo-text">PORTS</h1>
   <% end %>
-
+  <!-- slanted navbar -->
   <!-- Right Navigation -->
   <div class="navbar-wagon-right hidden-xs hidden-sm">
 
@@ -38,9 +39,9 @@
         </div>
       </div>
     <% else %>
-      <!-- Login link (when logged out) -->
-      <%= link_to t(".sign_in", default: "SIGN IN"), new_user_session_path, class: "navbar-wagon-item navbar-wagon-link" %>
-
+      <div class="sign-in" data-toggle="modal" data-target="#exampleModal">
+        SIGN IN
+      </div>
     <% end %>
   </div>
 
@@ -69,4 +70,3 @@
     </div>
   </div>
 </div>
-

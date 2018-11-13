@@ -14,6 +14,9 @@
   <%= f.text_field :price_per_week, class:"form-control input" %>
   <%= f.label :type, 'Type of Yacht' %>
   <%= f.select :category, ["Sail Boat", "Motor Boat"], class:"form-control input" %>
+  <%= f.fields_for :photos do |photo| %>
+    <%= photo.file_field :url, multiple: true, name:"photos[url][]" %>
+  <% end %>
   <%= f.submit class:"btn btn-primary" %>
 <% end %>
 

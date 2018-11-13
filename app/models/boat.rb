@@ -2,6 +2,7 @@ class Boat < ApplicationRecord
   belongs_to :user
   has_many :bookings
   has_many :reviews
+  has_many :photos
   validates :category, presence: true, inclusion: { in: ["Sail Boat", "Motor Boat"] }
   validates :name, presence: true
   validates :description, presence: true
@@ -11,4 +12,5 @@ class Boat < ApplicationRecord
   validates :price_per_week, presence: true, numericality: { only_integer: true }
   validates :user, presence: true
   validates :available, presence: true
+  accepts_nested_attributes_for :photos
 end
