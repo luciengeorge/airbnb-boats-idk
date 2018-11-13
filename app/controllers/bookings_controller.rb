@@ -1,6 +1,7 @@
 class BookingsController < ApplicationController
   def index
-    @bookings = Boat.bookings
+    @boat = Boat.find(params[:boat_id])
+    @bookings = @boat.bookings
   end
 
   def create
@@ -8,7 +9,7 @@ class BookingsController < ApplicationController
     @booking.boat = Boat.find(params[:boat_id])
     @booking.user = current_user
     if @booking.save
-      redirect_to boats_path(@booking.boat)
+      redirect_to boat_path(@booking.boat)
     else
       render 'boats/show'
     end
@@ -18,7 +19,7 @@ class BookingsController < ApplicationController
     @booking = Booking.find(params[:id])
     @boat = @booking.boat
     @booking.destroy
-    redirect_to boats_path(@boat)
+    redirect_to boat_path(@boat)
   end
 
   private
