@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get '/dashboard', to: 'pages#dashboard', as: 'dashboard'
   resources :boats do
     resources :reviews, only: %i[create destroy]
-    resources :bookings, only: %i[index create destroy]
+    resources :bookings, only: %i[show create destroy]
   end
   root to: 'pages#home'
 
