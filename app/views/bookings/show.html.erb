@@ -1,0 +1,16 @@
+<div class="container">
+  <div class="row">
+    <div class="col-m-4 col-m-offset-4">
+      <h1>Your booking with PORTS has been successful.</h1>
+
+      <h3> The boat you successfully booked is <em><%= @booking.boat.name %></em></h3>
+      <p>Your journey starts on <%= @booking.start_date.strftime('%b %d, %Y') %> and ends on <%= @booking.end_date.strftime('%b %d, %Y') %></p>
+      <p> Your boat <%= @booking.boat.name %> will pick you up from <%= @booking.boat.location %></p>
+      <p>The number of guests you are taking is <%= @booking.guests %></p>
+      <p>The price for your entire stay will be <%= @booking.boat.price_per_week %></p>
+
+      <p>Have the most amazing trip from everyone here at PORTS</p>
+    </div>
+  </div>
+</div>
+
