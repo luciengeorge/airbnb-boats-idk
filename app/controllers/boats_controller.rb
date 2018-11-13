@@ -17,16 +17,17 @@ class BoatsController < ApplicationController
 
   def new
     @boat = Boat.new
-    @boat.photos.build
     # @photo = Photo.new
   end
 
   def create
     @boat = Boat.new(boat_params)
-    # @photo = Photo.new()
-    # @photo.boat = @boat
+    puts "HERERERERERRE"
+    p @boat.photos.length
     @boat.user = current_user
     if @boat.save
+      p "LENGTH HERE"
+      p @boat.photos.length
       redirect_to boats_path
     else
       render :new
@@ -57,7 +58,7 @@ class BoatsController < ApplicationController
   end
 
   def boat_params
-    params.require(:boat).permit(:name, :description, :location, :capacity, :length, :price_per_week, :category, :available, photos_attributes: [:url])
+    params.require(:boat).permit(:name, :description, :location, :capacity, :length, :price_per_week, :category, :available, { photos: [] })
   end
 
   # def photo_params

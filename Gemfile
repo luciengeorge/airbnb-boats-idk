@@ -21,7 +21,7 @@ gem 'omniauth', '~> 1.0.0'
 # cloudinary gem
 gem 'cloudinary'
 # carrierwave gem
-gem 'carrierwave', '~> 1.2'
+gem 'carrierwave', github:'carrierwaveuploader/carrierwave'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

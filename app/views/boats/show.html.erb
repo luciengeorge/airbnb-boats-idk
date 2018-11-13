@@ -7,6 +7,11 @@
     <div class="boat-info">
       <h1 id="boat-name"><%= @boat.name %></h1>
       <ul>
+        <ul>
+          <% @boat.photos.each do |photo| %>
+            <li><%= cl_image_tag photo.url, height: 300, width: 400, crop: :fill %></li>
+          <% end %>
+        </ul>
         <li><strong>Description:</strong> <%= @boat.description %></li>
         <li><strong>Location:</strong> <%= @boat.location %></li>
         <li><strong>Capacity:</strong> <%= @boat.capacity %></li>
