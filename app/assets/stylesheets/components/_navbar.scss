@@ -10,6 +10,9 @@
   justify-content: space-between;
 }
 
+.sign-in {
+  cursor: pointer;
+}
 /* Logo */
 .navbar-wagon-brand img {
   height: 50px;
@@ -41,7 +44,7 @@
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: #7F7979;
   text-decoration: none;
 }
 
