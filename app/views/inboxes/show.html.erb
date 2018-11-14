@@ -1,0 +1,17 @@
+<div class="wrapper">
+  <div class="container">
+    <h1 class="text-center"><%= @inbox.title %></h1>
+      <ul class="list-group">
+        <% @conversations.each do |conversation| %>
+          <li class="list-group-item">
+            <h3><%= conversation.title %></h3>
+            <ul class="list-inline">
+              <% conversation.users.each do |user| %>
+                <p><%= user.name %></p>
+              <% end %>
+            </ul>
+          </li>
+        <% end %>
+      </ul>
+  </div>
+</div>
