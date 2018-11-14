@@ -3,6 +3,9 @@ ul{
   padding: 0px;
 }
 
+.show-page {
+  background-color: white;
+}
 .boat-info {
   text-align: center;
   justify-content: center;
@@ -11,6 +14,7 @@ ul{
 #boat-name {
   font-size: 60px;
   letter-spacing: 3px;
+  margin-top: none;
 }
 
 .horizontal-scroll-wrapper {
@@ -55,9 +59,9 @@ ul{
 }
 
 .banner-show {
-  height: 60vh;
+  height: 50vh;
   margin-top: 35px;
-  margin-bottom: 15px;
+  margin-bottom: 5px;
 }
 
 .show-info {
@@ -68,15 +72,12 @@ ul{
 .show-left {
   width: 30vw;
   height: 50vh;
-  margin-bottom: 40px;
+  margin-bottom: 20px;
 }
 
 .show-right{
   width: 30vw;
   height: 50vh;
-  // position: fixed;
-  // top: 100px;
-  // right: 100px;
 }
 
 .practice {
@@ -85,4 +86,8 @@ ul{
 
 .review-form-fixed {
   position: fixed;
+}
+
+.body-container {
+  background-color: white !important;
 }
