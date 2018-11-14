@@ -11,6 +11,7 @@
   background: $green;
   position: relative;
   border: none !important;
+
 }
 .alert-warning {
   background: $red;
@@ -22,4 +23,8 @@
   position: absolute;
   bottom: 0;
   right: 0;
+}
+
+.margin-div {
+  z-index: 4;
 }
