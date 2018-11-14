@@ -18,7 +18,7 @@
   <div class="row">
     <% @boats.each do |boat| %>
       <div class="col-xs-12 col-sm-6">
-        <div class="blog-card boat-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.pexels.com/photos/163236/luxury-yacht-boat-speed-water-163236.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')">
+        <div class="blog-card boat-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('<%= cl_image_path boat.photos.first.url %>')">
           <div class="title-content">
             <h3><%= boat.name.upcase %></h3>
           </div>
