@@ -14,21 +14,24 @@
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
   </head>
   <body>
-    <%= render 'shared/navbar' %>
-    <% if notice %>
-      <div class="margin-div alert-info" style="height: 148px;">
-        <%= render 'shared/flashes' %>
-      </div>
-    <% elsif alert %>
-      <div class="margin-div alert-warning" style="height: 148px;">
-        <%= render 'shared/flashes' %>
-      </div>
-    <% else %>
-      <div class="margin-div" style="height: 148px;">
-        <%= render 'shared/flashes' %>
-      </div>
-    <% end %>
-    <%= yield %>
+    <div style="min-height: calc(100vh - 180px)">
+      <%= render 'shared/navbar' %>
+      <% if notice %>
+        <div class="margin-div alert-info" style="height: 148px;">
+          <%= render 'shared/flashes' %>
+        </div>
+      <% elsif alert %>
+        <div class="margin-div alert-warning" style="height: 148px;">
+          <%= render 'shared/flashes' %>
+        </div>
+      <% else %>
+        <div class="margin-div" style="height: 148px;">
+          <%= render 'shared/flashes' %>
+        </div>
+      <% end %>
+      <%= yield %>
+    </div>
+    <%= render 'shared/footer' %>
 <!--     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script> -->
@@ -38,6 +41,5 @@
     <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
     <%= yield(:after_js) %>
     <%= javascript_pack_tag "components/map" %>
-    <%= render 'shared/footer' %>
   </body>
 </html>
