@@ -1,9 +1,17 @@
 <div class="wrapper">
   <div class="container">
-    <% @bookings.each do |booking| %>
-      <p><%= booking.user.name.upcase %> - <%= booking.boat.name.upcase %></p>
-      <p><%= booking.start_date %> -> <%= booking.end_date %></p>
-      <%= link_to "BACK TO #{booking.boat.name.upcase}", boat_path(booking.boat) %>
-    <% end %>
+    <h2 id="dashboard-title">Hello <strong><%= current_user.name.upcase %></strong>, here are your bookings</h2>
+      <% @bookings.each do |booking| %>
+    <div class="dashboard-cards">
+        <p>BOAT NAME: <%= booking.boat.name.upcase %></p>
+        <div>
+          <p>CHECK IN: <%= booking.start_date.strftime('%b %d, %Y').upcase %></p>
+          <p>CHECK OUT: <%= booking.end_date.strftime('%b %d, %Y').upcase %></p>
+        </div>
+        <p>PORT OF DEPARTURE: <%= booking.boat.location %></p>
+        <%= link_to "VIEW BOAT: #{booking.boat.name.upcase}", boat_path(booking.boat) %>
+        <hr>
+      <% end %>
+    </div>
   </div>
 </div>

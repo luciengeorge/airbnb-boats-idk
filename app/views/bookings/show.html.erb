@@ -3,7 +3,7 @@
     <div class="row">
       <div class="redbox">
         <h1>Your booking with PORTS has been successful.</h1>
-        <p>Booked by <strong><%= @booking.user.name %></strong></p>
+        <p>BOOKED BY <strong><%= @booking.user.name.upcase %></strong></p>
       </div>
     </div>
     <div class="row">
@@ -11,28 +11,29 @@
         <div id="date">
           <div class="headers-date">
             <div>
-            <p>Your journey starts on </p>
+            <p>YOUR JOURNEY STARTS ON </p>
             </div>
             <div>
-              <p>Your journey ends on </p>
+              <p>YOUR JOURNEY ENDS ON </p>
             </div>
           </div>
           <div class="date-date">
             <div>
-              <strong><%= @booking.start_date.strftime('%b %d, %Y') %> </strong>
+              <strong><%= @booking.start_date.strftime('%b %d, %Y').upcase %> </strong>
             </div>
             <div>
-             <strong><%= @booking.end_date.strftime('%b %d, %Y') %></strong>
+             <strong><%= @booking.end_date.strftime('%b %d, %Y').upcase %></strong>
             </div>
           </div>
         </div>
+        <hr>
         <div id="description">
-          <h3> The boat you successfully booked is <em><%= @booking.boat.name %></em></h3>
-          <p><strong>Your pick up location is:</strong> <%= @booking.boat.location %></p>
-          <p><strong>Number of guests:</strong> <%= @booking.guests %></p>
+          <p><strong>PORT OF DEPARTURE:</strong> <%= @booking.boat.location.upcase %></p>
+          <p><strong>NUMBER OF GUESTS:</strong> <%= @booking.guests %></p>
+          <p> YOU HAVE SUCESSFULLY BOOKED BOAT:  <em><%= @booking.boat.name.upcase %></em></p>
         </div>
         <div id="pricing">
-          <p><strong>Total price:</strong> $<%= @booking.boat.price_per_week %></p>
+          <p><strong>TOTAL PRICE:</strong> $<%= @booking.boat.price_per_week %></p>
           <em><p id="thankyou">Have the most amazing trip from everyone here at PORTS</p></em>
         </div>
       </div>
