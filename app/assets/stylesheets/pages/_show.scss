@@ -60,3 +60,30 @@ ul{
   margin-bottom: 15px;
 }
 
+.show-info {
+  display: flex;
+  justify-content: space-between;
+}
+
+.show-left {
+  width: 30vw;
+  height: 50vh;
+}
+
+.show-right{
+  width: 30vw;
+  height: 50vh;
+  // position: fixed;
+  // top: 100px;
+  // right: 100px;
+}
+
+.practice {
+  height: 1000px;
+}
+
+.review-form-fixed {
+  position: fixed;
+  z-index: 20000;
+  top: 200;
+}
