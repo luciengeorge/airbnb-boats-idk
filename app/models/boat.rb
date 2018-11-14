@@ -13,4 +13,6 @@ class Boat < ApplicationRecord
   validates :user, presence: true
   validates :available, presence: true
   accepts_nested_attributes_for :photos
+  geocoded_by :location
+  after_validation :geocode, if: :will_save_change_to_location?
 end
