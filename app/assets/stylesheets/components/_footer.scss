@@ -1,0 +1,49 @@
+.lw-footer {
+  margin-top: 150px;
+  background: #F4F4F4;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 180px;
+  padding: 0px 50px;
+  color: rgba(0,0,0,0.3);
+  position: relative;
+  bottom: 0;
+  width: 100vw;
+}
+.lw-footer-links {
+  display: flex;
+  align-items: center;
+}
+.lw-footer-links a {
+  color: black;
+  opacity: 0.15;
+  text-decoration: none;
+  font-size: 24px;
+  padding: 0px 10px;
+}
+.lw-footer-links a:hover {
+  opacity: 1;
+}
+.lw-footer .fa-heart {
+  color: #D23333;
+}
+
+.logo-two {
+  background-color: #3D3B3C;
+  box-shadow: 0px 0px 5px rgba(0,0,0,0.7);
+  color: white;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  position: absolute;
+  top: -75px;
+  left: 660px;
+  text-align: center;
+
+
+  h1 {
+    text-align: center;
+    margin-top: 50px;
+  }
+}

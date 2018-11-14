@@ -20,6 +20,7 @@ gem 'omniauth', '~> 1.0.0'
 gem 'jquery-rails'
 gem 'cloudinary'
 gem 'carrierwave'
+gem 'geocoder'
 
 group :development do
   gem 'web-console', '>= 3.3.0'

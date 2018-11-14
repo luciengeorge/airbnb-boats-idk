@@ -1,12 +1,9 @@
 <div class="banner-show">
   <div class="container" style="width: 140vw; margin-left: -20vw">
     <div class="show-carousel row">
-      <div><img src="https://images.unsplash.com/photo-1500627964684-141351970a7f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=395eadce669333e3b0263f8725b21fdf&auto=format&fit=crop&w=634&q=80" alt="" class="carousel-image"></div>
-      <div><img src="https://images.unsplash.com/photo-1500627964684-141351970a7f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=395eadce669333e3b0263f8725b21fdf&auto=format&fit=crop&w=634&q=80" alt="" class="carousel-image"></div>
-      <div><img src="https://images.unsplash.com/photo-1500627964684-141351970a7f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=395eadce669333e3b0263f8725b21fdf&auto=format&fit=crop&w=634&q=80" alt="" class="carousel-image"></div>
-      <div><img src="https://images.unsplash.com/photo-1500627964684-141351970a7f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=395eadce669333e3b0263f8725b21fdf&auto=format&fit=crop&w=634&q=80" alt="" class="carousel-image"></div>
-      <div><img src="https://images.unsplash.com/photo-1500627964684-141351970a7f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=395eadce669333e3b0263f8725b21fdf&auto=format&fit=crop&w=634&q=80" alt="" class="carousel-image"></div>
-      <div><img src="https://images.unsplash.com/photo-1500627964684-141351970a7f?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=395eadce669333e3b0263f8725b21fdf&auto=format&fit=crop&w=634&q=80" alt="" class="carousel-image"></div>
+      <% @boat.photos.each do |photo| %>
+      <div><img src="<%= cl_image_path photo.url, crop: :fill %>" class="carousel-image" alt=""></div>
+      <% end %>
     </div>
   </div>
 </div>
@@ -16,11 +13,6 @@
       <div class="col-sm-12">
         <div class="boat-info">
           <h1 id="boat-name"><%= @boat.name.upcase %></h1>
-          <ul>
-            <% @boat.photos.each do |photo| %>
-              <li><%= cl_image_tag photo.url, height: 300, width: 400, crop: :fill %></li>
-            <% end %>
-          </ul>
           <ul>
             <li><strong>LOCATION:</strong> <%= @boat.location.upcase %></li>
             <li><strong>CAPACITY:</strong> <%= @boat.capacity %></li>
@@ -42,6 +34,12 @@
           <h2>DESCRIPTION</h2>
           <p><%= @boat.description.upcase %></p>
           <h2>LOCATION</h2>
+          <div
+            id="map"
+            style="width: 100%;
+            height: 700px;"
+            data-markers="<%= @markers.to_json %>"></div>
+
         </div>
         <div class="review-form show-right">
           <%= form_for [@boat, @review] do |f| %>
@@ -51,20 +49,17 @@
           <%= f.select :rating, (1..5), class:"form-control", required: true %>
           <%= f.submit 'ADD REVIEW', class:"btn btn-default btn-homepage" %>
           <% end %>
+          <div>
+            <% @boat.reviews.each do |review| %>
+            <p><%= review.content %> - <%= review.rating %></p>
+            <% end %>
+          </div>
         </div>
       </div>
-    </div>
-    <div>
-      <% @boat.reviews.each do |review| %>
-      <p><%= review.content %> - <%= review.rating %></p>
-      <% end %>
+
     </div>
   </div>
 </div>
-<div class="practice"></div>
-
-
-
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
