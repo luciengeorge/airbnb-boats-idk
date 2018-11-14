@@ -1,4 +1,4 @@
-<div>
+<div class="banner-wrapper">
   <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path 'yacht6.jpg' %>);">
     <div class="form-home-page">
       <%= form_tag(boats_path, method: :get, class:"form-inline form-search-home") do %>
@@ -7,6 +7,17 @@
       <% end %>
     </div>
   </div>
+</div>
+<div class="home-info-wrapper">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-11">
+        <p class="ports-info">A <strong>PORTS</strong> YACHT CHARTER IS NOT JUST A HOLIDAY. IT IS A CAREFULLY TAILORED EXPRESSION OF YOUR PERSONALITY AND AMBITIONS. OUR WORLDWIDE HOSTS AND OUR 360 DEGREE APPROACH, HAS GENERATED AN EXCLUSIVE CHARTER FLEET AND THE ABILITY TO PROVIDE A FIVE STAR SANCTUARY ANYWHERE IN THE WORLD.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="home-wrapper">
 </div>
 <%= render 'shared/modal' %>
 

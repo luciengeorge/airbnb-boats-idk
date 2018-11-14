@@ -7,8 +7,10 @@
   display: flex;
   align-items: center;
   justify-content: left;
-  margin-top: 750x;
-  width: 100%;
+  margin-top: -69px;
+  width: 110%;
+  margin-left: -20px;
+
   z-index: 1;
 }
 .banner h1 {
@@ -26,11 +28,12 @@
 
 .form-home-page {
   background-color: transparent;
-  margin-left: 20px;
+  margin-left: 60px;
 }
 
 .form-search-home {
   margin: 20px;
+  transform: rotate(3deg);
 }
 
 #location {
@@ -45,4 +48,12 @@
   width: 168px !important;
   border-radius: 5px !important;
   color: gray;
+}
+
+.banner-wrapper {
+  height: 90vh;
+  width: 110%;
+  margin-left: -10px;
+  transform: rotate(-3deg) !important;
+
 }
