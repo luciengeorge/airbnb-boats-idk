@@ -21,6 +21,7 @@ gem 'jquery-rails'
 gem 'cloudinary'
 gem 'carrierwave'
 gem 'geocoder'
+gem 'faker'
 
 group :development do
   gem 'web-console', '>= 3.3.0'
