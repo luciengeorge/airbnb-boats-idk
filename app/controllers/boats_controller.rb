@@ -2,6 +2,7 @@ class BoatsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :find_boat, only: [:show, :edit, :update]
   def index
+
     Inbox.create!(title: "#{current_user.name}'s inbox", user: current_user) if current_user && current_user.inbox.nil?
     if params[:location]
       # do search shit
@@ -15,6 +16,11 @@ class BoatsController < ApplicationController
     Inbox.create!(title: "#{current_user.name}'s inbox", user: current_user) if current_user && current_user.inbox.nil?
     @review = Review.new
     @booking = Booking.new
+    @markers =
+      [{
+        lng: @boat.longitude,
+        lat: @boat.latitude
+      }]
   end
 
   def new
