@@ -30,10 +30,13 @@
             <p><%= boat.length %>M</p>
           </div><!-- /.card-info -->
           <!-- overlays -->
-          <div class="gradient-overlay"></div>
+          <div class="gradient-overlay">
+          </div>
           <div class="color-overlay"></div>
+          <%= link_to "", boat_path(boat), :class => "card-link" %>
         </div>
       </div>
     <% end %>
   </div>
 </div>
+<%= render 'shared/modal' %>
