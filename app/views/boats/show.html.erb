@@ -7,18 +7,16 @@
     </div>
   </div>
 </div>
-<div class="wrapper">
-  <div class="container">
+<div class="wrapper show-page">
+  <div class="container body-container">
     <div class="row text-center" >
       <div class="col-sm-12">
         <div class="boat-info">
           <h1 id="boat-name"><%= @boat.name.upcase %></h1>
-          <ul>
-            <li><strong>LOCATION:</strong> <%= @boat.location.upcase %></li>
-            <li><strong>CAPACITY:</strong> <%= @boat.capacity %></li>
-            <li><strong>YACHT LENGTH:</strong> <%= @boat.length %></li>
-            <li><strong>PRICE PER WEEK:</strong> <%= @boat.price_per_week %></li>
-            <li><strong>BOAT TYPE:</strong> <%= @boat.category.upcase %></li>
+            <p><strong><i class="fas fa-map-marker-alt"></i></strong> <%= @boat.location.upcase %></p>
+          <ul class="list-inline">
+            <li><strong><i class="fas fa-dollar-sign"></i></strong> <%= @boat.price_per_week %></li>
+            <li><strong><i class="fas fa-ship"></i></strong> <%= @boat.category.upcase %></li>
           </ul>
         </div>
         <div class="btn-show">
@@ -33,13 +31,11 @@
         <div class="show-left">
           <h2>DESCRIPTION</h2>
           <p><%= @boat.description.upcase %></p>
-          <h2>LOCATION</h2>
-          <div
-            id="map"
-            style="width: 100%;
-            height: 100%;"
-            data-markers="<%= @markers.to_json %>">
-          </div>
+          <hr>
+          <ul class="list-inline">
+            <li><strong><i class="fas fa-users"></i></strong> <%= @boat.capacity %> guests</li>
+            <li><strong><i class="fas fa-anchor"></i></strong> <%= @boat.length %></li>
+          </ul>
         </div>
         <div class="review-form show-right">
           <%= form_for [@boat, @review] do |f| %>
@@ -56,8 +52,13 @@
           </div>
         </div>
       </div>
-
     </div>
+    <h2>LOCATION</h2>
+    <div
+      id="map"
+      style="width: 100%;
+      height: 400px;margin-bottom: 200px;"
+      data-markers="<%= @markers.to_json %>"></div>
   </div>
 </div>
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
@@ -105,3 +106,4 @@
     });
   </script>
   <% end %>
+
