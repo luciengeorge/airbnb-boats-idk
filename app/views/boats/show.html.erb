@@ -26,7 +26,7 @@
         </div>
       </div>
     </div>
-    <div class="row">
+    <div class="row bottom-half">
       <div class="show-info">
         <div class="show-left">
           <h2>DESCRIPTION</h2>
@@ -39,14 +39,19 @@
 
         </div>
         <div class="review-form show-right">
+          <h2>REVIEWS</h2>
           <%= form_for [@boat, @review] do |f| %>
           <%= f.label :content, 'CONTENT' %>
           <%= f.text_field :content, class:"form-control", required: true %>
-          <%= f.label :rating, 'RATING' %>
-          <%= f.select :rating, (1..5), class:"form-control", required: true %>
-          <%= f.submit 'ADD REVIEW', class:"btn btn-default btn-homepage" %>
+          <div class="rating-form">
+            <%= f.label :rating, 'RATING' %>
+            <%= f.select :rating, (1..5), class:"form-control", required: true %>
+          </div>
+          <br>
+          <%= f.submit 'ADD REVIEW', class:"btn btn-default btn-homepage btn-move" %>
           <% end %>
-          <div>
+          <hr>
+          <div id="review-content">
             <% @boat.reviews.each do |review| %>
             <p><%= review.content %> - <%= review.rating %></p>
             <% end %>
