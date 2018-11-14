@@ -9,7 +9,17 @@
 }
 .alert-info {
   background: $green;
+  position: relative;
+  border: none !important;
 }
 .alert-warning {
   background: $red;
+  position: relative;
+  border: none !important;
+}
+
+.message-button {
+  position: absolute;
+  bottom: 0;
+  right: 0;
 }

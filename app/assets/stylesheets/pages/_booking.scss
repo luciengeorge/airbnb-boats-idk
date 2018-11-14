@@ -1,5 +1,64 @@
 .redbox {
-  background-color: red;
+  padding-left: 10px;
+  background-color: transparent;
   height: 20vh;
-  width: 70%;
+  display: flex;
+  width: 100%;
+  border: 0.5px solid gray;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 3px;
+}
+
+.bluebox {
+  display: flex;
+  margin-top: 20px;
+  flex-direction: column;
+  border: 0.5px solid gray;
+  height: 50vh;
+  border-radius: 3px;
+
+}
+
+#date {
+  margin-top: 30px;
+  padding-left: 10px;
+  // display: flex;
+  // flex-direction: initial;
+  // justify-content: space-around;
+
+}
+
+.date-date {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.headers-date {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#description {
+  margin-top: 30px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#description h3{
+  color: #4169e1;
+}
+
+#pricing {
+  margin-top: 50px;
+  border-top: 1px solid black;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+#thankyou {
+  text-align: center;
 }
