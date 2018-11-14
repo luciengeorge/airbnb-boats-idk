@@ -1,24 +1,42 @@
+<div class="search-form-wrapper">
+  <div class="boats-search-form container">
+    <div class="row">
+      <div class="col-xs-12">
+        <%= form_tag(boats_path, :method => "get", id: "search-form", class: "form-inline") do %>
+          <%= text_field_tag :capacity, params[:capacity], placeholder: "CAPACITY", class: "form-control input" %>
+          <%= text_field_tag :length, params[:length], placeholder: "LENGTH", class: "form-control input" %>
+          <%= text_field_tag :capacity, params[:category], placeholder: "BOAT TYPE", class: "form-control input" %>
+          <%= text_field_tag :price_per_week, params[:price_per_week], placeholder: "PRICE PER WEEK", class: "form-control input" %>
+           <%= submit_tag "SEARCH", :name => nil, class: "btn btn-default btn-search" %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
 
-<div class="container" style="margin-top: 180px; height: 700px;">
+<div class="container" style="margin-top: 120px; height: 700px;">
   <div class="row">
     <% @boats.each do |boat| %>
       <div class="col-xs-12 col-sm-6">
         <div class="blog-card boat-card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://images.pexels.com/photos/163236/luxury-yacht-boat-speed-water-163236.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260')">
           <div class="title-content">
-            <h3>LUCIEN</h3>
+            <h3><%= boat.name.upcase %></h3>
           </div>
           <div class="card-info">
-            <p>LEBANON</p>
-            <p>SAIL BOAT</p>
-            <p><i class="fas fa-users"></i> 7</p>
-            <p><i class="fas fa-pound-sign"></i> 899pw</p>
-            <p>length: 100m</p>
+            <p><%= boat.location.upcase %></p>
+            <p><%= boat.category.upcase %></p>
+            <p><i class="fas fa-users"></i> <%= boat.capacity %></p>
+            <p><i class="fas fa-pound-sign"></i> <%= boat.price_per_week %></p>
+            <p><%= boat.length %>M</p>
           </div><!-- /.card-info -->
           <!-- overlays -->
-          <div class="gradient-overlay"></div>
+          <div class="gradient-overlay">
+          </div>
           <div class="color-overlay"></div>
+          <%= link_to "", boat_path(boat), :class => "card-link" %>
         </div>
       </div>
     <% end %>
   </div>
 </div>
+<%= render 'shared/modal' %>

@@ -1,16 +1,41 @@
 <div class="wrapper">
   <div class="container">
-    <div class="redbox">
-      <h1>Your booking with PORTS has been successful.</h1>
+    <div class="row">
+      <div class="redbox">
+        <h1>Your booking with PORTS has been successful.</h1>
+        <p>Booked by <strong><%= @booking.user.name %></strong></p>
+      </div>
     </div>
-    <div class="bluebox">
-        <h3> The boat you successfully booked is <em><%= @booking.boat.name %></em></h3>
-        <p>Your journey starts on <%= @booking.start_date.strftime('%b %d, %Y') %> and ends on <%= @booking.end_date.strftime('%b %d, %Y') %></p>
-        <p> Your boat <%= @booking.boat.name %> will pick you up from <%= @booking.boat.location %></p>
-        <p>The number of guests you are taking is <%= @booking.guests %></p>
-        <p>The price for your entire stay will be <%= @booking.boat.price_per_week %></p>
-
-        <p>Have the most amazing trip from everyone here at PORTS</p>
+    <div class="row">
+      <div class="bluebox">
+        <div id="date">
+          <div class="headers-date">
+            <div>
+            <p>Your journey starts on </p>
+            </div>
+            <div>
+              <p>Your journey ends on </p>
+            </div>
+          </div>
+          <div class="date-date">
+            <div>
+              <strong><%= @booking.start_date.strftime('%b %d, %Y') %> </strong>
+            </div>
+            <div>
+             <strong><%= @booking.end_date.strftime('%b %d, %Y') %></strong>
+            </div>
+          </div>
+        </div>
+        <div id="description">
+          <h3> The boat you successfully booked is <em><%= @booking.boat.name %></em></h3>
+          <p><strong>Your pick up location is:</strong> <%= @booking.boat.location %></p>
+          <p><strong>Number of guests:</strong> <%= @booking.guests %></p>
+        </div>
+        <div id="pricing">
+          <p><strong>Total price:</strong> $<%= @booking.boat.price_per_week %></p>
+          <em><p id="thankyou">Have the most amazing trip from everyone here at PORTS</p></em>
+        </div>
+      </div>
     </div>
     </div>
   </div>
