@@ -6,7 +6,7 @@ class User < ApplicationRecord
   has_many :boats
   has_many :reviews
   has_many :bookings
-  belongs_to :inbox
+  has_one :inbox
   has_many :conversations, through: :inbox
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true
