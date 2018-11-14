@@ -13,14 +13,13 @@
       <!-- Links when logged in -->
       <%= link_to "ADD A YACHT", new_boat_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "DASHBOARD", dashboard_path, class: "navbar-wagon-item navbar-wagon-link" %>
-      <%= link_to "CHARTERS", "#", class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "INBOX", inbox_path(current_user.inbox), class: "navbar-wagon-item navbar-wagon-link" %>
 
 
       <!-- Avatar with dropdown menu -->
       <div class="navbar-wagon-item">
         <div class="dropdown">
-          <%= image_tag "http://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar dropdown-toggle", id: "navbar-wagon-menu", "data-toggle" => "dropdown" %>
+          <i class="fas fa-bars" class="avatar dropdown-toggle" id="navbar-wagon-menu" data-toggle="dropdown"></i>
           <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
             <li>
               <%= link_to "#" do %>
