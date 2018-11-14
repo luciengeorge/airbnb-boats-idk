@@ -12,35 +12,47 @@
 </div>
 <div class="wrapper">
   <div class="container">
-    <div class="boat-info">
-      <h1 id="boat-name"><%= @boat.name.upcase %></h1>
-      <ul>
-        <% @boat.photos.each do |photo| %>
-          <li><%= cl_image_tag photo.url, height: 300, width: 400, crop: :fill %></li>
-        <% end %>
-      </ul>
-      <ul>
-        <li><strong>DESCRIPTION:</strong> <%= @boat.description.upcase %></li>
-        <li><strong>LOCATION:</strong> <%= @boat.location.upcase %></li>
-        <li><strong>CAPACITY:</strong> <%= @boat.capacity %></li>
-        <li><strong>BOAT LENGTH:</strong> <%= @boat.length %></li>
-        <li><strong>PRICE PER WEEK:</strong> <%= @boat.price_per_week %></li>
-        <li><strong>BOAT TYPE:</strong> <%= @boat.category.upcase %></li>
-      </ul>
+    <div class="row text-center" >
+      <div class="col-sm-12">
+        <div class="boat-info">
+          <h1 id="boat-name"><%= @boat.name.upcase %></h1>
+          <ul>
+            <% @boat.photos.each do |photo| %>
+              <li><%= cl_image_tag photo.url, height: 300, width: 400, crop: :fill %></li>
+            <% end %>
+          </ul>
+          <ul>
+            <li><strong>LOCATION:</strong> <%= @boat.location.upcase %></li>
+            <li><strong>CAPACITY:</strong> <%= @boat.capacity %></li>
+            <li><strong>YACHT LENGTH:</strong> <%= @boat.length %></li>
+            <li><strong>PRICE PER WEEK:</strong> <%= @boat.price_per_week %></li>
+            <li><strong>BOAT TYPE:</strong> <%= @boat.category.upcase %></li>
+          </ul>
+        </div>
+        <div class="btn-show">
+          <button type="button" class="btn btn-default btn-homepage" data-toggle="modal" data-target="#exampleModalCenter">
+            BOOK NOW
+          </button>
+        </div>
+      </div>
     </div>
-    <div class="btn-show">
-      <button type="button" class="btn btn-default btn-homepage" data-toggle="modal" data-target="#exampleModalCenter">
-        BOOK NOW
-      </button>
-    </div>
-    <div class="container">
-      <%= form_for [@boat, @review] do |f| %>
-      <%= f.label :content, 'CONTENT' %>
-      <%= f.text_field :content, class:"form-control", required: true %>
-      <%= f.label :rating, 'RATING' %>
-      <%= f.select :rating, (1..5), class:"form-control", required: true %>
-      <%= f.submit 'ADD REVIEW', class:"btn btn-default btn-homepage" %>
-      <% end %>
+    <div class="row">
+      <div class="show-info">
+        <div class="show-left">
+          <h2>DESCRIPTION</h2>
+          <p><%= @boat.description.upcase %></p>
+          <h2>LOCATION</h2>
+        </div>
+        <div class="review-form show-right">
+          <%= form_for [@boat, @review] do |f| %>
+          <%= f.label :content, 'CONTENT' %>
+          <%= f.text_field :content, class:"form-control", required: true %>
+          <%= f.label :rating, 'RATING' %>
+          <%= f.select :rating, (1..5), class:"form-control", required: true %>
+          <%= f.submit 'ADD REVIEW', class:"btn btn-default btn-homepage" %>
+          <% end %>
+        </div>
+      </div>
     </div>
     <div>
       <% @boat.reviews.each do |review| %>
@@ -49,6 +61,10 @@
     </div>
   </div>
 </div>
+<div class="practice"></div>
+
+
+
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
   <div class="modal-dialog modal-dialog-centered" role="document">
     <div class="modal-content">
