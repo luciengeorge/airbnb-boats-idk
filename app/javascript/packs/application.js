@@ -13,4 +13,7 @@ import './components/modal';
 import './components/map'
 import './components/flash';
 import "../plugins/flatpickr";
+import { fixReviewScroll } from './components/reviews';
+
+fixReviewScroll()
 

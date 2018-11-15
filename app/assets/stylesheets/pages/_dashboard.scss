@@ -9,3 +9,48 @@
 hr {
   border-color: #3D3B3C;
 }
+
+
+.avatar-circle-dashboard {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+}
+
+.dashboard-flex {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.booking-dashboard {
+  display: flex;
+  flex-direction: column;
+}
+
+.user-details {
+  text-align: center;
+}
+
+.view-boat-link {
+  text-decoration: none;
+  color: black;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+.not-booked-yachts {
+  text-align: center;
+}
+
+#view-yacht-button {
+  width:
+}

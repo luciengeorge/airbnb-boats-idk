@@ -1,17 +1,52 @@
 <div class="wrapper">
   <div class="container">
-    <h2 id="dashboard-title">Hello <strong><%= current_user.name.upcase %></strong>, here are your bookings</h2>
-      <% @bookings.each do |booking| %>
-    <div class="dashboard-cards">
-        <p>BOAT NAME: <%= booking.boat.name.upcase %></p>
-        <div>
-          <p>CHECK IN: <%= booking.start_date.strftime('%b %d, %Y').upcase %></p>
-          <p>CHECK OUT: <%= booking.end_date.strftime('%b %d, %Y').upcase %></p>
+    <div class="dashboard-flex">
+      <div class="contact-info">
+        <% if @user.photo? %>
+        <div> <%= cl_image_tag @user.photo, class: "avatar-circle-dashboard", crop: :fill %>
         </div>
-        <p>PORT OF DEPARTURE: <%= booking.boat.location %></p>
-        <%= link_to "VIEW BOAT: #{booking.boat.name.upcase}", boat_path(booking.boat) %>
-        <hr>
+        <% else %>
+        <%= link_to edit_user_registration_path do %>
+          <%= image_tag('default-avatar.png', class: "avatar-circle-dashboard") %>
+          <% end %>
+          <% end %>
+        <div class="user-details">
+          <p><%= current_user.name.upcase %></p>
+          <p><%= current_user.email.upcase %></p>
+          <%= link_to "EDIT ACCOUNT", edit_user_registration_path, class: "btn btn-homepage", :method => :get %>
+        </div>
+      </div>
+      <% unless @user.booking_ids.empty?  %>
+      <div class="booking-dashboard">
+        <div class="greeting-user">
+          <h2 id="dashboard-title">Hello <strong><%= current_user.name.upcase %></strong>, here are your bookings</h2>
+        </div>
+        <div class="booked-yachts">
+          <% @bookings.each do |booking| %>
+            <div class="dashboard-cards">
+              <p>BOAT NAME: <%= booking.boat.name.upcase %></p>
+              <div>
+                <p>CHECK IN: <%= booking.start_date.strftime('%b %d, %Y').upcase %></p>
+                <p>CHECK OUT: <%= booking.end_date.strftime('%b %d, %Y').upcase %></p>
+              </div>
+                <p>PORT OF DEPARTURE: <%= booking.boat.location %></p>
+                <%= link_to "VIEW BOAT: #{booking.boat.name.upcase}", boat_path(booking.boat), class: "view-boat-link" %>
+                <hr>
+          <% end %>
+            </div>
+        </div>
+      </div>
+      <% else %>
+      <div class="booking-dashboard">
+        <div class="greeting-user">
+          <h2 id="dashboard-title">Hello <strong><%= current_user.name.upcase %></strong>, you have no bookings</h2>
+        </div>
+        <div class="not-booked-yachts">
+            <div class="dashboard-cards">
+              <%= link_to "VIEW YACHTS", boats_path, :class => "btn btn-homepage", :method => :get %>
       <% end %>
     </div>
   </div>
 </div>
+
+
