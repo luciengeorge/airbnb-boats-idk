@@ -1,0 +1,48 @@
+.message-sender {
+  background-color: #DCF8C6;
+  padding: 5px 20px;
+  border-radius: 10px;
+  width: 30%;
+  margin: 0 auto;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.message-receiver {
+  background-color: white;
+  padding: 5px 20px;
+  border-radius: 10px;
+  width: 30%;
+  margin: 0 auto;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.inbox {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.conversations {
+  flex-grow: 1;
+}
+
+.messages {
+  flex-grow: 1;
+}
+
+.message-div {
+  margin: 20px 0;
+}
+
+.messages {
+  padding: 15px;
+  margin: 15px;
+  border-radius: 10px;
+  box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+}
+
+.conversations {
+  padding: 15px;
+  margin: 15px;
+  border-radius: 10px;
+}

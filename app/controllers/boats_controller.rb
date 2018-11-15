@@ -2,7 +2,7 @@ class BoatsController < ApplicationController
   skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :find_boat, only: [:show, :edit, :update]
   def index
-    Inbox.create!(title: "#{current_user.name}'s inbox", user: current_user) if current_user && current_user.inbox.nil?
+    # Inbox.create!(title: "#{current_user.name}'s inbox", user: current_user) if current_user && current_user.inbox.nil?
     if params[:location] && current_user
       # do search shit
       @boats = Boat.where("location LIKE '%#{params[:location]}%'").where.not(user: current_user)
@@ -17,7 +17,7 @@ class BoatsController < ApplicationController
   end
 
   def show
-    Inbox.create!(title: "#{current_user.name}'s inbox", user: current_user) if current_user && current_user.inbox.nil?
+    # Inbox.create!(title: "#{current_user.name}'s inbox", user: current_user) if current_user && current_user.inbox.nil?
     @review = Review.new
     @booking = Booking.new
     @markers =
@@ -28,7 +28,7 @@ class BoatsController < ApplicationController
   end
 
   def new
-    Inbox.create!(title: "#{current_user.name}'s inbox", user: current_user) if current_user && current_user.inbox.nil?
+    # Inbox.create!(title: "#{current_user.name}'s inbox", user: current_user) if current_user && current_user.inbox.nil?
     @boat = Boat.new
     @photo = @boat.photos.build
   end
