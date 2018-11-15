@@ -6,8 +6,9 @@ Rails.application.routes.draw do
     resources :reviews, only: %i[create destroy]
     resources :bookings, only: %i[show create destroy]
   end
-  resources :inboxes, only: %i[show]
-
+  resources :conversations do
+    resources :messages
+  end
   root to: 'pages#home'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

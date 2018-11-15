@@ -1,0 +1,62 @@
+<div class="wrapper">
+  <div class="container">
+    <h3 class="text-center">Inbox</h3>
+    <div class="inbox">
+      <div class="conversations">
+        <ul class="list-group">
+          <% @conversations.each do |conversation| %>
+            <% if conversation.sender_id == current_user.id || conversation.recipient_id == current_user.id %>
+              <% if conversation.sender_id == current_user.id %>
+                <% recipient = User.find(conversation.recipient_id) %>
+              <% else %>
+                <% recipient = User.find(conversation.sender_id) %>
+              <% end %>
+              <li class="list-group-item"><%= link_to recipient.name, conversation_path(conversation) %></li>
+            <% end %>
+          <% end %>
+        </ul>
+      </div>
+      <div class="messages">
+        <% @messages.each_with_index do |message, index| %>
+          <% if message.body %>
+            <% user = User.find(message.user_id) %>
+            <% if user == current_user %>
+              <div class="message-div" style="margin-left: 200px;">
+                <div class="message-right">
+                  <p class="message-sender text-right">
+                    <%= message.body %>
+                  </p>
+                </div>
+              </div>
+            <% else %>
+              <div class="message-div" style="margin-right: 200px;">
+                <div class="message-left">
+                  <p class="message-receiver text-left">
+                    <%= message.body %>
+                  </p>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        <% end %>
+        <%= form_for [@conversation, @message], html: { class: "ui reply form" } do |f| %>
+            <%= f.text_area :body, class:"form-control" %>
+          <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
+          <div>
+            <%= f.submit "Add Reply", class: "btn btn-primary" %>
+          </div>
+        <% end %>
+      </div>
+    </div>
+    <h3 class="text-center">All Users</h3>
+      <ul class="list-group">
+        <% @users.each do |user| %>
+          <% if user.id != current_user.id %>
+            <li class="list-group-item">
+              <%= link_to "Send message to #{user.name}", conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%>
+            </li>
+          <% end %>
+      <% end %>
+    </ul>
+  </div>
+</div>
