@@ -6,11 +6,14 @@ class BoatsController < ApplicationController
     if params[:location] && current_user
       # do search shit
       @boats = Boat.where("location LIKE '%#{params[:location]}%'").where.not(user: current_user)
+      search_filter
     elsif current_user
       @boats = Boat.where.not(user: current_user)
+      search_filter
     elsif params[:location]
       # do search shit
       @boats = Boat.where("location LIKE '%#{params[:location]}%'")
+      search_filter
     else
       @boats = Boat.all
     end
@@ -64,6 +67,13 @@ class BoatsController < ApplicationController
   end
 
   private
+
+  def search_filter
+    if params[:category].present? || params[:length].present? || params[:capacity].present?
+      search = params[:location] + " " + params[:capacity] + " " + params[:length] + " " + params[:category]
+      @boats = Boat.search_by_boat_info(search)
+    end
+  end
 
   def find_boat
     @boat = Boat.find(params[:id])

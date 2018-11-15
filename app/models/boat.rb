@@ -15,4 +15,11 @@ class Boat < ApplicationRecord
   accepts_nested_attributes_for :photos
   geocoded_by :location
   after_validation :geocode, if: :will_save_change_to_location?
+
+  include PgSearch
+  pg_search_scope :search_by_boat_info,
+    against: [ :location, :capacity, :length, :category ],
+    using: {
+      tsearch: { prefix: true }
+    }
 end
