@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users
   get '/dashboard', to: 'pages#dashboard', as: 'dashboard'
+  get '/profile', to: 'pages#profile', as: 'profile'
   resources :boats do
     resources :reviews, only: %i[create destroy]
     resources :bookings, only: %i[show create destroy]

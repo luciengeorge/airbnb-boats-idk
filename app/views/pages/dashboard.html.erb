@@ -1,17 +1,34 @@
 <div class="wrapper">
   <div class="container">
-    <h2 id="dashboard-title">Hello <strong><%= current_user.name.upcase %></strong>, here are your bookings</h2>
-      <% @bookings.each do |booking| %>
-    <div class="dashboard-cards">
-        <p>BOAT NAME: <%= booking.boat.name.upcase %></p>
-        <div>
-          <p>CHECK IN: <%= booking.start_date.strftime('%b %d, %Y').upcase %></p>
-          <p>CHECK OUT: <%= booking.end_date.strftime('%b %d, %Y').upcase %></p>
+    <div class="dashboard-flex">
+      <div class="contact-info">
+        <div> <%= cl_image_tag @user.photo, class: "avatar-circle-dashboard", crop: :fill %>
         </div>
-        <p>PORT OF DEPARTURE: <%= booking.boat.location %></p>
-        <%= link_to "VIEW BOAT: #{booking.boat.name.upcase}", boat_path(booking.boat) %>
-        <hr>
-      <% end %>
+        <p><%= current_user.name.upcase %></p>
+        <p><%= current_user.email.upcase %></p>
+        <button>edit</button>
+      </div>
+      <div class="booking-dashboard">
+        <div class="greeting-user">
+          <h2 id="dashboard-title">Hello <strong><%= current_user.name.upcase %></strong>, here are your bookings</h2>
+        </div>
+        <div class="booked-yachts">
+          <% @bookings.each do |booking| %>
+            <div class="dashboard-cards">
+              <p>BOAT NAME: <%= booking.boat.name.upcase %></p>
+              <div>
+                <p>CHECK IN: <%= booking.start_date.strftime('%b %d, %Y').upcase %></p>
+                <p>CHECK OUT: <%= booking.end_date.strftime('%b %d, %Y').upcase %></p>
+              </div>
+                <p>PORT OF DEPARTURE: <%= booking.boat.location %></p>
+                <%= link_to "VIEW BOAT: #{booking.boat.name.upcase}", boat_path(booking.boat) %>
+                <hr>
+          <% end %>
+            </div>
+        </div>
+      </div>
     </div>
   </div>
 </div>
+
+

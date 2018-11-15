@@ -8,5 +8,7 @@ import './components/map'
 
 import { fixReviewScroll } from './components/reviews';
 import './components/flash';
+import './components/avatar';
+
 fixReviewScroll()
 
