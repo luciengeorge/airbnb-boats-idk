@@ -7,4 +7,8 @@ class PagesController < ApplicationController
   def dashboard
     @bookings = current_user.bookings
   end
+
+  def globe
+    @boats = Boat.all
+  end
 end
