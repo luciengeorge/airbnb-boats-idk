@@ -8,36 +8,46 @@
     <%= action_cable_meta_tag %>
     <%= stylesheet_pack_tag "components/map" %>
     <%= stylesheet_link_tag 'application', media: 'all' %>
+    <script src="http://www.webglearth.com/v2/api.js"></script>
+
+
+
+
+
+
     <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> -->
     <%#= stylesheet_pack_tag 'application', media: 'all' %> <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
     <link rel="stylesheet" type="text/css" href="http://kenwheeler.github.io/slick/slick/slick-theme.css"/>
     <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.css"/>
   </head>
-  <body>
-    <%= render 'shared/navbar' %>
-    <% if notice %>
-      <div class="margin-div alert-info" style="height: 148px;">
-        <%= render 'shared/flashes' %>
-      </div>
-    <% elsif alert %>
-      <div class="margin-div alert-warning" style="height: 148px;">
-        <%= render 'shared/flashes' %>
-      </div>
-    <% else %>
-      <div class="margin-div" style="height: 148px;">
-        <%= render 'shared/flashes' %>
-      </div>
-    <% end %>
-    <%= yield %>
+  <body onload="initialize()">
+    <div style="min-height: calc(100vh - 180px)">
+      <%= render 'shared/navbar' %>
+      <% if notice %>
+        <div class="margin-div alert-info" style="height: 148px;">
+          <%= render 'shared/flashes' %>
+        </div>
+      <% elsif alert %>
+        <div class="margin-div alert-warning" style="height: 148px;">
+          <%= render 'shared/flashes' %>
+        </div>
+      <% else %>
+        <div class="margin-div" style="height: 148px;">
+          <%= render 'shared/flashes' %>
+        </div>
+      <% end %>
+      <%= yield %>
+    </div>
+    <%= render 'shared/footer' %>
 <!--     <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
     <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
     <script type="text/javascript" src="slick/slick.min.js"></script> -->
 
     <%= javascript_include_tag 'application' %>
     <%= javascript_pack_tag 'application' %>
+
     <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.6.0/slick.min.js"></script>
     <%= yield(:after_js) %>
-    <%= render 'shared/footer' %>
     <%= javascript_pack_tag "components/map" %>
   </body>
 </html>

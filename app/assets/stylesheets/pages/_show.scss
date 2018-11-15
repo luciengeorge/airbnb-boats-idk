@@ -63,7 +63,9 @@ ul{
   margin-top: 35px;
   margin-bottom: 5px;
 }
-
+.bottom-half{
+  margin: 40px;
+}
 .show-info {
   display: flex;
   justify-content: space-between;
@@ -90,4 +92,16 @@ ul{
 
 .body-container {
   background-color: white !important;
+}
+
+#review-content {
+  margin-top: 30px;
+}
+
+.btn-move {
+  margin-top: 10px;
+}
+
+.rating-form {
+  margin-top: 10px;
 }

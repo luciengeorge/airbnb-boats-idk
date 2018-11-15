@@ -22,18 +22,14 @@
 }
 
 .home-wrapper {
-  height: 700px;
+  height: 500px;
   width: 110%;
   margin-left: -20px;
-  background-color: #3D3B3C;
+  background-color: white;
   transform: rotate(-3deg);
   margin-top: -70px;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  background: #283048;  /* fallback for old browsers */
-background: -webkit-linear-gradient(to right, #859398, #283048);  /* Chrome 10-25, Safari 5.1-6 */
-background: linear-gradient(to right, #859398, #283048); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
 
-  box-shadow: 0px 0px 3px rgba(0,0,0,0.4);
+body {
+  background-color: white !important;
 }
