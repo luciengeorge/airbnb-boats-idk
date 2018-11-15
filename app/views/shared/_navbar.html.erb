@@ -11,6 +11,7 @@
     <% if user_signed_in? %>
 
       <!-- Links when logged in -->
+      <%= link_to "EXPLORE", globe_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "ADD A YACHT", new_boat_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "DASHBOARD", dashboard_path, class: "navbar-wagon-item navbar-wagon-link" %>
       <%= link_to "INBOX", inbox_path(current_user.inbox), class: "navbar-wagon-item navbar-wagon-link" %>
@@ -52,9 +53,8 @@
       <i class="fa fa-bars dropdown-toggle" data-toggle="dropdown"></i>
       <ul class="dropdown-menu dropdown-menu-right navbar-wagon-dropdown-menu">
         <% if user_signed_in? %>
-
+          <li><%= link_to "EXPLORE", globe_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
           <li><%= link_to "DASHBOARD", dashboard_path, class: "navbar-wagon-item navbar-wagon-link" %></li>
-          <li><%= link_to "CHARTERS", "#", class: "navbar-wagon-item navbar-wagon-link" %></li>
           <li><%= link_to "INBOX", "#", class: "navbar-wagon-item navbar-wagon-link" %></li>
           <li><%= link_to "PROFILE", "#", class: "navbar-wagon-item navbar-wagon-link" %></li>
           <li><%= link_to "SETTINGS", "#", class: "navbar-wagon-item navbar-wagon-link" %></li>
