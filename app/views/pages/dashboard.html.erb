@@ -1,4 +1,4 @@
-<div class="wrapper">
+<div class="dashboard-wrapper">
   <div class="container">
     <div class="dashboard-flex">
       <div class="contact-info">
@@ -13,13 +13,13 @@
         <div class="user-details">
           <p><%= current_user.name.upcase %></p>
           <p><%= current_user.email.upcase %></p>
-          <%= link_to "EDIT ACCOUNT", edit_user_registration_path, class: "btn btn-homepage", :method => :get %>
+          <%= link_to "EDIT ACCOUNT", edit_user_registration_path, class: "btn btn-default btn-homepage", :method => :get %>
         </div>
       </div>
       <% unless @user.booking_ids.empty?  %>
       <div class="booking-dashboard">
         <div class="greeting-user">
-          <h2 id="dashboard-title">Hello <strong><%= current_user.name.upcase %></strong>, here are your bookings</h2>
+          <h2 id="dashboard-title">HELLO <strong><%= current_user.name.upcase %></strong>, HERE ARE YOUR BOOKINGS</h2>
         </div>
         <div class="booked-yachts">
           <% @bookings.each do |booking| %>
@@ -39,11 +39,11 @@
       <% else %>
       <div class="booking-dashboard">
         <div class="greeting-user">
-          <h2 id="dashboard-title">Hello <strong><%= current_user.name.upcase %></strong>, you have no bookings</h2>
+          <h2 id="dashboard-title">HELLO <strong><%= current_user.name.upcase %></strong>, YOU HAVE NO BOOKINGS</h2>
         </div>
         <div class="not-booked-yachts">
             <div class="dashboard-cards">
-              <%= link_to "VIEW YACHTS", boats_path, :class => "btn btn-homepage", :method => :get %>
+              <%= link_to "VIEW YACHTS", boats_path, :class => "btn btn-default btn-homepage", :method => :get %>
       <% end %>
     </div>
   </div>

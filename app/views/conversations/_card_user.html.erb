@@ -1,0 +1,14 @@
+<%= link_to conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post', class:"message-card-link" do %>
+  <div class="message">
+    <div class="left-div-show">
+      <% if user.photo? %>
+        <%= cl_image_tag(user.photo, class:"avatar-large") %>
+      <% else %>
+        <%= image_tag('default-avatar.png', class: "avatar-large") %>
+      <% end %>
+      <div class="recipient-name">
+        <p><%= user.name %></p>
+      </div>
+    </div>
+  </div>
+<% end %>

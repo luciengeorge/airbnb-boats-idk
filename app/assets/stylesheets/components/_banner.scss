@@ -9,7 +9,7 @@
   justify-content: left;
   margin-top: -69px;
   width: 110%;
-  margin-left: -20px;
+  margin-left: -300px;
   z-index: 1;
 }
 .banner h1 {
@@ -27,7 +27,7 @@
 
 .form-home-page {
   background-color: transparent;
-  margin-left: 60px;
+  margin-left: 350px;
 }
 
 .form-search-home {
@@ -45,6 +45,14 @@
 .btn-homepage {
   height: 60px !important;
   width: 168px !important;
+  border-radius: 5px !important;
+  color: gray;
+  border: 1px solid lightgray;
+}
+
+.btn-homepage-small {
+  height: 40px !important;
+  width: 100px !important;
   border-radius: 5px !important;
   color: gray;
   border: 1px solid lightgray;

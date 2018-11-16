@@ -2,7 +2,7 @@
   <div class="row">
     <div class="col-xm-12">
       <div class="form-devise">
-        <h2>Change your password</h2>
+        <h2>CHANGE YOUR PASSWORD</h2>
 
         <%= simple_form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :put }) do |f| %>
           <%= f.error_notification %>
@@ -19,12 +19,12 @@
                         input_html: { autocomplete: "new-password" } %>
             <%= f.input :password_confirmation, label: "Confirm your new password", required: true %>
           </div>
-
+        <div class="button-separator">
           <div class="form-actions">
             <%= f.button :submit, "Change my password", class: "link-for-buttons" %>
           </div>
         <% end %>
-
+       </div>
         <%= render "devise/shared/links" %>
       </div>
     </div>
