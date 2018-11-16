@@ -1,5 +1,5 @@
 <div class="banner-wrapper">
-  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path 'yacht6.jpg' %>);">
+  <div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,101,168,0.6) 0%, rgba(0,36,61,0.6) 50%), url(<%= image_path 'yacht8.jpeg' %>);">
     <div class="form-home-page">
       <%= form_tag(boats_path, method: :get, class:"form-inline form-search-home") do %>
         <%= text_field_tag(:location, "", placeholder: "WHERE WOULD YOU LIKE TO GO?", class:"form-control form-text") %>
@@ -18,6 +18,30 @@
   </div>
 </div>
 <div class="home-wrapper">
+  <div class="container card-container" style=" transform: rotate(3deg);">
+    <div class="row">
+      <div class="col-xs-12 col-sm-5">
+        <div class="card card__one">
+          <figure class="card__img">
+            <img src="https://d39l2hkdp2esp1.cloudfront.net/img/photo/73448/73448_00_2x.jpg?20160107005232">
+          </figure>
+          <div class="card__desc">
+            <p><a data-toggle="modal" data-target="#exampleModal">BECOME A HOST</a> AND ADD YOUR YACHT TO OUR EXCLUSIVE FLEET</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12 col-sm-5 col-sm-offset-1">
+        <div class="card card__one">
+          <figure class="card__img">
+            <img src="https://d39l2hkdp2esp1.cloudfront.net/img/photo/146889/146889_00_2x.jpg?20180624073557">
+          </figure>
+          <div class="card__desc">
+            <p><%= link_to 'CHARTER A YACHT', boats_path %> AND HAVE AN EXPERIENCE OF A LIFETIME</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
 <%= render 'shared/modal' %>
 
