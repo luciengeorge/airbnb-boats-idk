@@ -4,14 +4,12 @@
       <div class="col-xs-12">
         <%= form_tag(boats_path, :method => "get", id: "search-form", class: "form-inline") do %>
           <% if params[:location].present? %>
-            <%= text_field_tag :location, params[:location], placeholder: "", class: "form-control input", id: "search-input" %>
+            <%= text_field_tag :location, params[:location], placeholder: "", class: "form-control input input-width", id: "search-input" %>
           <% else %>
-            <%= text_field_tag :location, params[:location], placeholder: "LOCATION", class: "form-control input", id: "search-input" %>
+            <%= text_field_tag :location, params[:location], placeholder: "LOCATION", class: "form-control input input-width", id: "search-input" %>
           <% end %>
-          <%= text_field_tag :capacity, params[:capacity], placeholder: "CAPACITY", class: "form-control input" %>
-          <%= text_field_tag :length, params[:length], placeholder: "LENGTH", class: "form-control input" %>
-          <%= text_field_tag :category, params[:category], placeholder: "BOAT TYPE", class: "form-control input" %>
-          <%= text_field_tag :price_per_week, params[:price_per_week], placeholder: "PRICE PER WEEK", class: "form-control input" %>
+          <%= text_field_tag :capacity, params[:capacity], placeholder: "GUESTS", class: "form-control input input-width" %>
+          <%= text_field_tag :length, params[:length], placeholder: "LENGTH (m)", class: "form-control input input-width" %>
            <%= submit_tag "SEARCH", :name => nil, class: "btn btn-default btn-search" %>
         <% end %>
       </div>
@@ -34,7 +32,7 @@
               <p><%= boat.category.upcase %></p>
               <p><i class="fas fa-users"></i> <%= boat.capacity %></p>
               <p><i class="fas fa-pound-sign"></i> <%= boat.price_per_week %></p>
-              <p><%= boat.length %>M</p>
+              <p><%= boat.length %>m</p>
             </div><!-- /.card-info -->
             <!-- overlays -->
             <div class="gradient-overlay">
@@ -52,7 +50,7 @@
               <p><%= boat.category.upcase %></p>
               <p><i class="fas fa-users"></i> <%= boat.capacity %></p>
               <p><i class="fas fa-pound-sign"></i> <%= boat.price_per_week %></p>
-              <p><%= boat.length %>M</p>
+              <p><%= boat.length %>m</p>
             </div><!-- /.card-info -->
             <!-- overlays -->
             <div class="gradient-overlay">

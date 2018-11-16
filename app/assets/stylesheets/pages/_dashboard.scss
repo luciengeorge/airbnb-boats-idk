@@ -10,7 +10,6 @@ hr {
   border-color: #3D3B3C;
 }
 
-
 .avatar-circle-dashboard {
   width: 250px;
   height: 250px;
@@ -53,4 +52,6 @@ hr {
 
 .dashboard-wrapper {
   margin-top: 50px;
+  display: flex;
+  justify-content: space-around;
 }
