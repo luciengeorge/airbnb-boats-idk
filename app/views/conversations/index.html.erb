@@ -10,7 +10,7 @@
           <% else %>
             <% recipient = User.find(conversation.sender_id) %>
           <% end %>
-          <% puts conversation.messages %>
+          <% puts conversation.messages.last.body %>
 
         <% end %>
       <% end %>
