@@ -36,7 +36,9 @@
           </ul>
           <ul>
             <li>
-              <%= render 'card_user', user: @boat.user, sender_id: current_user.id, recipient_id: @boat.user.id, class:"text-center" %>
+              <%= @boat %>
+              <%= current_user %>
+              <!-- <%= render 'card_user', user: @boat.user, sender_id: current_user.id, recipient_id: @boat.user.id, class:"text-center" %> -->
             </li>
           </ul>
         </div>
