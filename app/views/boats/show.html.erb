@@ -86,15 +86,15 @@
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <%= simple_form_for [@boat, @booking] do |f| %>
+      <%= form_for [@boat, @booking] do |f| %>
       <div class="modal-body">
         <div class="form-group">
           <%= f.label :start_date, 'CHECK IN' %>
-          <%= f.input :start_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+          <%= f.datetime_select :start_date, class:"form-control input" %>
         </div>
         <div class="form-group">
           <%= f.label :end_date, 'CHECK OUT' %>
-          <%= f.input :end_date, as: :string, required: false, input_html: {class: "datepicker"} %>
+          <%= f.datetime_select :end_date, class:"form-control input" %>
         </div>
         <div class="form-group">
           <%= f.label :guests, 'GUESTS' %>

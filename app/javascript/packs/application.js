@@ -11,7 +11,7 @@ import "bootstrap";
 import './components/modal';
 import './components/map'
 import './components/flash';
-import "../plugins/flatpickr";
+// import "../plugins/flatpickr";
 
 // import { fixReviewScroll } from './components/reviews';
 // fixReviewScroll()
