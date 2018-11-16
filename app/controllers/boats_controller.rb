@@ -5,14 +5,14 @@ class BoatsController < ApplicationController
     # Inbox.create!(title: "#{current_user.name}'s inbox", user: current_user) if current_user && current_user.inbox.nil?
     if params[:location] && current_user
       # do search shit
-      @boats = Boat.where("location LIKE '%#{params[:location]}%'").where.not(user: current_user)
+      @boats = Boat.where("location ILIKE '%#{params[:location]}%'").where.not(user: current_user)
       search_filter
     elsif current_user
       @boats = Boat.where.not(user: current_user)
       search_filter
     elsif params[:location]
       # do search shit
-      @boats = Boat.where("location LIKE '%#{params[:location]}%'")
+      @boats = Boat.where("location ILIKE '%#{params[:location]}%'")
       search_filter
     else
       @boats = Boat.all

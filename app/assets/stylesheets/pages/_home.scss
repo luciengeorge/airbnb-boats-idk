@@ -18,16 +18,24 @@
 .ports-info {
   transform: rotate(3deg);
   letter-spacing: 3px;
-  line-height: 30px;
+  line-height: 40px;
 }
 
 .home-wrapper {
-  height: 500px;
+  height: 600px;
   width: 110%;
   margin-left: -20px;
   background-color: white;
   transform: rotate(-3deg);
-  margin-top: -70px;
+  margin-top: -30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.card-container {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 200px;
 }
 
 body {
