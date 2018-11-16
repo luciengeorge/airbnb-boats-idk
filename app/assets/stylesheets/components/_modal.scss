@@ -13,7 +13,7 @@
 
 .sign-up-body {
   display: flex;
-  height: 350px;
+  height: 450px;
   flex-direction: column;
   justify-content: space-around;
   margin-left: 10px;
@@ -69,4 +69,8 @@
   &:hover{
     color: black;
   }
+}
+
+.sign-up-link {
+  margin-top: 10px;
 }
