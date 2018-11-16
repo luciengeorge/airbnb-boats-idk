@@ -10,11 +10,13 @@
           <% else %>
             <% recipient = User.find(conversation.sender_id) %>
           <% end %>
+          <% puts conversation.messages %>
           <%= render 'card_inbox', recipient: recipient, unread_messages: unread_messages, conversation: conversation %>
         <% end %>
       <% end %>
     </ul>
   </div>
 </div>
+
 
 
