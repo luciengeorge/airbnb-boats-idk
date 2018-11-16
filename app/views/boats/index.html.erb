@@ -31,8 +31,8 @@
               <p><%= boat.location.upcase %></p>
               <p><%= boat.category.upcase %></p>
               <p><i class="fas fa-users"></i> <%= boat.capacity %></p>
-              <p><i class="fas fa-pound-sign"></i> <%= boat.price_per_week %></p>
-              <p><%= boat.length %>m</p>
+              <p><i class="fas fa-pound-sign"></i> <%= number_with_delimiter(boat.price_per_week, delimiter: ',') %> </p>
+              <p><%= boat.length %> Meters</p>
             </div><!-- /.card-info -->
             <!-- overlays -->
             <div class="gradient-overlay">
@@ -49,8 +49,8 @@
               <p><%= boat.location.upcase %></p>
               <p><%= boat.category.upcase %></p>
               <p><i class="fas fa-users"></i> <%= boat.capacity %></p>
-              <p><i class="fas fa-pound-sign"></i> <%= boat.price_per_week %></p>
-              <p><%= boat.length %>m</p>
+              <p><i class="fas fa-pound-sign"></i> <%= number_with_delimiter(boat.price_per_week, delimiter: ',') %> </p>
+              <p><%= boat.length %> Meters</p>
             </div><!-- /.card-info -->
             <!-- overlays -->
             <div class="gradient-overlay">
