@@ -17,7 +17,11 @@
         </div>
       </div>
       <div class="message-body">
-        <p><em><%= conversation.messages.last.body %></em></p>
+        <% if conversation.messages.last.body %>
+          <p><em><%= conversation.messages.last.body %></em></p>
+        <% else %>
+          <p>No messages yet</p>
+        <% end %>
       </div>
     </div>
     <div class="right-div">
