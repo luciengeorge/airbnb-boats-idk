@@ -7,6 +7,15 @@ class ConversationsController < ApplicationController
   end
 
   def show
+    # @conversation.messages.map.with_index do |message, index|
+    #   message.update(read: true) unless index == @conversation.messages.count - 1 && message.user_id != current_user.id
+    # end
+    # @conversation.messages.each do |message|
+    #   message.update(read: true) if message.user_id != current_user
+    # end
+    @conversation.messages.reject do |message|
+      message.update(read: true) if message.user_id != current_user.id
+    end
     @messages = @conversation.messages
     if @messages.length > 10
       @over_ten = true
