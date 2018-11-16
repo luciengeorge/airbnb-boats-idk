@@ -1,6 +1,6 @@
 <div class="wrapper">
   <div class="container">
-    <h3 class="text-center">Inbox</h3>
+    <h2 class="inbox-title text-center">Inbox</h2>
     <div class="inbox">
       <div class="conversations">
         <ul class="list-group">
@@ -12,13 +12,7 @@
               <% else %>
                 <% recipient = User.find(conversation.sender_id) %>
               <% end %>
-              <% if unread_messages.zero? && conversation.id == params[:id].to_i %>
-                <li class="list-group-item"><%= link_to recipient.name, conversation_path(conversation) %></li>
-              <% elsif unread_messages.zero? %>
-                <li class="list-group-item"><%= link_to recipient.name, conversation_path(conversation) %></li>
-              <% else %>
-                <li class="list-group-item"><%= link_to "#{recipient.name} #{unread_messages}", conversation_path(conversation), class:"unread" %></li>
-              <% end %>
+              <%= render 'card_inbox_show', recipient: recipient, unread_messages: unread_messages, conversation: conversation %>
             <% end %>
           <% end %>
         </ul>
@@ -46,22 +40,22 @@
             <% end %>
           <% end %>
         <% end %>
-        <%= form_for [@conversation, @message], html: { class: "ui reply form" } do |f| %>
-          <%= f.text_area :body, class:"form-control" %>
-          <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
-          <div>
-            <%= f.submit "Add Reply", class: "btn btn-primary" %>
-          </div>
-        <% end %>
+        <div class="form-div">
+          <%= form_for [@conversation, @message], html: { class: "ui reply form" } do |f| %>
+            <%= f.text_area :body, class:"form-control" %>
+            <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
+            <%= button_tag(type: 'submit', class: "btn btn-homepage-small") do %>
+              Send <i class="fab fa-telegram-plane"></i>
+            <% end %>
+          <% end %>
+        </div>
       </div>
     </div>
-    <h3 class="text-center">All Users</h3>
+    <h2 class="inbox-title text-center">All Users</h2>
     <ul class="list-group">
       <% @users.each do |user| %>
         <% if user.id != current_user.id %>
-          <li class="list-group-item">
-            <%= link_to "Send message to #{user.name}", conversations_path(sender_id: current_user.id, recipient_id: user.id), method: 'post'%>
-          </li>
+          <%= render 'card_user', user: user, sender_id: current_user.id, recipient_id: user.id %>
         <% end %>
       <% end %>
     </ul>

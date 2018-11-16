@@ -10,13 +10,7 @@
           <% else %>
             <% recipient = User.find(conversation.sender_id) %>
           <% end %>
-          <% if unread_messages.zero? && conversation.id == params[:id].to_i %>
-            <li class="list-group-item"><%= link_to recipient.name, conversation_path(conversation) %></li>
-          <% elsif unread_messages.zero? %>
-            <li class="list-group-item"><%= link_to recipient.name, conversation_path(conversation) %></li>
-          <% else %>
-            <li class="list-group-item"><%= link_to "#{recipient.name} #{unread_messages}", conversation_path(conversation), class:"unread" %></li>
-          <% end %>
+          <%= render 'card_inbox', recipient: recipient, unread_messages: unread_messages, conversation: conversation %>
         <% end %>
       <% end %>
     </ul>

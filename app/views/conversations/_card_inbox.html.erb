@@ -1,0 +1,29 @@
+<%= link_to conversation_path(conversation), class:"message-card-link" do %>
+  <div class="message">
+    <div class="left-div">
+      <% if recipient.photo? %>
+        <%= cl_image_tag(recipient.photo, class:"avatar-large") %>
+      <% else %>
+        <%= image_tag('default-avatar.png', class: "avatar-large") %>
+      <% end %>
+      <div class="recipient-name">
+        <p><%= recipient.name %></p>
+      </div>
+      <div class="message-body">
+        <p><strong><%= conversation.messages.last.body %></strong></p>
+      </div>
+    </div>
+    <div class="right-div">
+      <% if unread_messages.zero? && conversation.id == params[:id].to_i %>
+        <p class="date-created"><%= conversation.messages.last.created_at.strftime('%A, %d %b %Y %l:%M %p') %></p>
+      <% elsif unread_messages.zero? %>
+        <p class="date-created"><%= conversation.messages.last.created_at.strftime('%A, %d %b %Y %l:%M %p') %></p>
+      <% else %>
+        <div class="avatar-unread-messages avatar" style="background-color: red; color: white;">
+          <%= unread_messages %>
+        </div>
+        <p class="date-created"><%= conversation.messages.last.created_at.strftime('%A, %d %b %Y %l:%M %p') %></p>
+      <% end %>
+    </div>
+  </div>
+<% end %>
