@@ -14,3 +14,30 @@
   color: black;
   text-decoration: none;
 }
+
+.form-inputs {
+  font-weight: normal !important;
+  text-align: left;
+}
+
+.form-control-label {
+  font-weight: normal !important;
+}
+
+.file {
+  font-weight: normal !important;
+}
+
+.button-separator {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+a {
+  color: #111c4A;
+  &:hover {
+    text-decoration: none;
+  }
+}

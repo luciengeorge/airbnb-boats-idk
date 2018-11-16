@@ -22,11 +22,11 @@
               <div>
               <div><%= link_to "Forgot your password?", new_password_path(:user), class: "forgot-password-link" %>
               </div>
-              <div><a id="sign-up-tab">Sign Up</a></div>
+              <div class="sign-up-link"><a id="sign-up-tab">Sign Up</a></div>
               </div>
             </div>
             <div class="modal-footer">
-              <%= f.submit 'Sign in', class: 'btn' %>
+              <%= f.submit 'Sign in', class: 'btn btn-homepage' %>
             </div>
           <% end %>
           </div>
@@ -43,13 +43,15 @@
               <div><%= f.password_field :password, class: 'form-input' %></div>
               <div><%= f.label :password_confirmation, class: 'form-labels' %></div>
               <div><%= f.password_field :password_confirmation, class: 'form-input' %></div>
+              <div><%= f.label :photo %></div>
+              <div><%= f.file_field :photo_cache, as: :hidden %></div>
               <div><%= f.check_box :remember_me %>
               <%= f.label :remember_me, class: 'form-labels remember_me' %></div>
               <div>
               </div>
             </div>
             <div class="modal-footer">
-              <%= f.submit 'Sign up', class: 'btn' %>
+              <%= f.submit 'Sign up', class: 'btn btn-homepage' %>
             </div>
           <% end %>
           </div>
