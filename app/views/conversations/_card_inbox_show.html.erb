@@ -1,0 +1,24 @@
+<%= link_to conversation_path(conversation), class:"message-card-link" do %>
+  <div class="message-show">
+    <div class="left-div-show">
+      <% if recipient.photo? %>
+        <%= cl_image_tag(recipient.photo, class:"avatar-large") %>
+      <% else %>
+        <%= image_tag('default-avatar.png', class: "avatar-large") %>
+      <% end %>
+      <div class="recipient-name">
+        <p><%= recipient.name.capitalize %></p>
+      </div>
+    </div>
+    <div class="right-div-show">
+      <% if unread_messages.zero? && conversation.id == params[:id].to_i %>
+      <% elsif unread_messages.zero? %>
+      <% else %>
+        <div class="avatar-unread-messages avatar" style="background-color: red; color: white;">
+          <%= unread_messages %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+<% end %>
+<hr style="border-color: rgba(0, 0, 0, 0.3);">

@@ -8,10 +8,11 @@ class BookingsController < ApplicationController
     @booking = Booking.new(booking_params)
     @booking.boat = Boat.find(params[:boat_id])
     @booking.user = current_user
+    # raise
     if @booking.save
       redirect_to boat_booking_path(@booking.boat, @booking)
     else
-      render 'boats/show'
+      redirect_to boat_path(@booking.boat)
     end
   end
 
