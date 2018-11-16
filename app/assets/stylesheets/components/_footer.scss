@@ -1,20 +1,21 @@
 .lw-footer {
   margin-top: 150px;
   background: #F4F4F4;
-  display: flex;
   align-items: center;
-  justify-content: space-between;
-  height: 180px;
+  height: 200px;
   padding: 0px 50px;
   color: rgba(0,0,0,0.3);
   position: relative;
   bottom: 0;
   width: 100vw;
-}
-.lw-footer-links {
   display: flex;
+  justify-content: center;
+}
+
+.lw-footer-links {
   align-items: center;
 }
+
 .lw-footer-links a {
   color: black;
   opacity: 0.15;
@@ -45,4 +46,13 @@
     text-align: center;
     margin-top: 50px;
   }
+}
+
+.lw-footer-info {
+  font-size: 15px;
+  text-decoration: none;
+  color: lightgrey;
+    &:hover {
+      text-decoration: none !important;
+    }
 }
