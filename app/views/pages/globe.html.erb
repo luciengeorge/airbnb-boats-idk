@@ -5,7 +5,7 @@
 
         <% @boats.each do |boat| %>
         var marker = WE.marker([<%= boat.latitude %>, <%= boat.longitude %>]).addTo(earth);
-        marker.bindPopup("<b><%= boat.name %></b><br><%= boat.location %><br /><span style='font-size:10px;color:#999'><%= boat.capacity %></span>", {maxWidth: 150, closeButton: true}).openPopup();
+        marker.bindPopup("<b><%= boat.name %></b><br><%= boat.location %><br /><span style='font-size:10px;color:#999'><%= boat.capacity %></span>", {maxWidth: 150, closeButton: true});
 
         var markerCustom = WE.marker([50, -9], '/img/logo-webglearth-white-100.png', 100, 24).addTo(earth);
         <% end %>
