@@ -129,6 +129,7 @@ $large: 992px;
 $x-large: 1200px;
 
 .card {
+  width: 500px;
   position: relative;
   flex: 1 1 100%;
   margin: $grid-gutter 0;
@@ -142,6 +143,10 @@ $x-large: 1200px;
   }
 }
 
+.card-row {
+  margin-left: -150px;
+}
+
 .card__thumb {
   overflow: hidden;
 }
@@ -150,8 +155,8 @@ $x-large: 1200px;
   margin: (-$card-padding) (-$card-padding) 0;
 
   img {
-    max-width: 100%;
-    height: 280px;
+    max-width: 500px;
+    height: 350px;
     border: 0;
     vertical-align: middle;
     box-sizing: border-box;
