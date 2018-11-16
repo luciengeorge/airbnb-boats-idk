@@ -6,6 +6,7 @@ class PagesController < ApplicationController
 
   def dashboard
     @bookings = current_user.bookings
+    @user = current_user
   end
 
   def globe
