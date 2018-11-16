@@ -3,13 +3,20 @@
     <h3 class="text-center">Inbox</h3>
     <ul class="list-group">
       <% @conversations.each do |conversation| %>
+        <% unread_messages = conversation.messages.reject { |message| message.read || message.user_id == current_user.id }.count %>
         <% if conversation.sender_id == current_user.id || conversation.recipient_id == current_user.id %>
           <% if conversation.sender_id == current_user.id %>
             <% recipient = User.find(conversation.recipient_id) %>
           <% else %>
             <% recipient = User.find(conversation.sender_id) %>
           <% end %>
-          <li class="list-group-item"><%= link_to recipient.name, conversation_path(conversation) %></li>
+          <% if unread_messages.zero? && conversation.id == params[:id].to_i %>
+            <li class="list-group-item"><%= link_to recipient.name, conversation_path(conversation) %></li>
+          <% elsif unread_messages.zero? %>
+            <li class="list-group-item"><%= link_to recipient.name, conversation_path(conversation) %></li>
+          <% else %>
+            <li class="list-group-item"><%= link_to "#{recipient.name} #{unread_messages}", conversation_path(conversation), class:"unread" %></li>
+          <% end %>
         <% end %>
       <% end %>
     </ul>
