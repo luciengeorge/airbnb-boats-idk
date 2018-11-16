@@ -3,6 +3,12 @@
   align-items: center;
   padding: 20px;
   border-bottom: 1px solid rgba(220,224,244,0.4);
+  margin: 20px 0;
+}
+
+.message-show {
+  display: flex;
+  align-items: center;
   margin: 10px 0;
 }
 
@@ -25,6 +31,7 @@
 .message-body {
   flex-grow: 1;
   p {
+    font-size: 16px;
     padding: 5px;
     margin: auto;
   }
@@ -50,12 +57,13 @@
   justify-content: space-around;
   p {
     padding: 5px;
-    margin: auto;
+    margin: auto 0;
   }
 }
 
 .date-created {
   margin: 10px 0;
+  font-size: 12px;
 }
 
 .message-card-link {

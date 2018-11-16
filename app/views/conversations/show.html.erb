@@ -1,28 +1,36 @@
 <div class="wrapper">
   <div class="container">
-    <h2 class="inbox-title text-center">Inbox</h2>
-    <div class="inbox">
-      <div class="conversations">
-        <ul class="list-group">
-          <% @conversations.each do |conversation| %>
-            <% unread_messages = conversation.messages.reject { |message| message.read || message.user_id == current_user.id }.count %>
-            <% if conversation.sender_id == current_user.id || conversation.recipient_id == current_user.id %>
-              <% if conversation.sender_id == current_user.id %>
-                <% recipient = User.find(conversation.recipient_id) %>
+    <div class="header-inbox">
+      <%= link_to "BACK", conversations_path, class:"back-to-conversations" %>
+      <div class="user-info-inbox">
+        <div class="user-info-inbox-name">
+          <h2 class="inbox-title text-center user-inbox">
+            <% if @conversation.sender_id == current_user.id || @conversation.recipient_id == current_user.id %>
+              <% if @conversation.sender_id == current_user.id %>
+                <% recipient = User.find(@conversation.recipient_id) %>
               <% else %>
-                <% recipient = User.find(conversation.sender_id) %>
+                <% recipient = User.find(@conversation.sender_id) %>
               <% end %>
-              <%= render 'card_inbox_show', recipient: recipient, unread_messages: unread_messages, conversation: conversation %>
+              <% if recipient.photo? %>
+                <%= cl_image_tag(recipient.photo, class:"avatar-large") %>
+              <% else %>
+                <%= image_tag('default-avatar.png', class: "avatar-large") %>
+              <% end %>
             <% end %>
-          <% end %>
-        </ul>
+          </h2>
+          <div class="recipient-name">
+            <p><%= recipient.name.capitalize %></p>
+          </div>
+        </div>
       </div>
+    </div>
+    <div class="inbox">
       <div class="messages">
         <% @messages.each_with_index do |message, index| %>
           <% if message.body %>
             <% user = User.find(message.user_id) %>
             <% if user == current_user %>
-              <div class="message-div" style="margin-left: 200px;">
+              <div class="message-div" style="">
                 <div class="message-right">
                   <p class="message-sender text-right">
                     <%= message.body %>
@@ -30,7 +38,7 @@
                 </div>
               </div>
             <% else %>
-              <div class="message-div" style="margin-right: 200px;">
+              <div class="message-div" style="">
                 <div class="message-left">
                   <p class="message-receiver text-left">
                     <%= message.body %>
@@ -51,13 +59,5 @@
         </div>
       </div>
     </div>
-    <h2 class="inbox-title text-center">All Users</h2>
-    <ul class="list-group">
-      <% @users.each do |user| %>
-        <% if user.id != current_user.id %>
-          <%= render 'card_user', user: user, sender_id: current_user.id, recipient_id: user.id %>
-        <% end %>
-      <% end %>
-    </ul>
   </div>
 </div>

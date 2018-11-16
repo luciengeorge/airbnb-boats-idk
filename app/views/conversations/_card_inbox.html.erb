@@ -7,10 +7,17 @@
         <%= image_tag('default-avatar.png', class: "avatar-large") %>
       <% end %>
       <div class="recipient-name">
-        <p><%= recipient.name %></p>
+        <div style="border-right:1px solid #000; height:50px; border-color: rgba(0, 0, 0, 0.3); width: 150px; align-items: left; display: flex;">
+          <p>
+            <strong>
+              <%= recipient.name.capitalize %>
+            </strong>
+          </p>
+
+        </div>
       </div>
       <div class="message-body">
-        <p><strong><%= conversation.messages.last.body %></strong></p>
+        <p><em><%= conversation.messages.last.body %></em></p>
       </div>
     </div>
     <div class="right-div">
@@ -27,3 +34,4 @@
     </div>
   </div>
 <% end %>
+<hr style="border-color: rgba(0, 0, 0, 0.3);">

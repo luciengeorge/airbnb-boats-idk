@@ -19,7 +19,6 @@
             <li><strong><i class="fas fa-ship"></i></strong> <%= @boat.category.upcase %></li>
           </ul>
         </div>
-        <div class="btn-show">
           <button type="button" class="btn btn-default btn-homepage" data-toggle="modal" data-target="#exampleModalCenter">
             BOOK NOW
           </button>
@@ -35,6 +34,11 @@
           <ul class="list-inline">
             <li><strong><i class="fas fa-users"></i></strong> <%= @boat.capacity %> guests</li>
             <li><strong><i class="fas fa-anchor"></i></strong> <%= @boat.length %></li>
+          </ul>
+          <ul>
+            <li>
+              <%= render 'card_user', user: @boat.user, sender_id: current_user.id, recipient_id: @boat.user.id, class:"text-center" %>
+            </li>
           </ul>
         </div>
         <div class="review-form show-right">

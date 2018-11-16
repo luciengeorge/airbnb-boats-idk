@@ -1,5 +1,5 @@
 <%= link_to conversation_path(conversation), class:"message-card-link" do %>
-  <div class="message">
+  <div class="message-show">
     <div class="left-div-show">
       <% if recipient.photo? %>
         <%= cl_image_tag(recipient.photo, class:"avatar-large") %>
@@ -7,7 +7,7 @@
         <%= image_tag('default-avatar.png', class: "avatar-large") %>
       <% end %>
       <div class="recipient-name">
-        <p><%= recipient.name %></p>
+        <p><%= recipient.name.capitalize %></p>
       </div>
     </div>
     <div class="right-div-show">
@@ -21,3 +21,4 @@
     </div>
   </div>
 <% end %>
+<hr style="border-color: rgba(0, 0, 0, 0.3);">
