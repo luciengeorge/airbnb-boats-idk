@@ -15,10 +15,10 @@ Boat.destroy_all
 User.destroy_all
 
 puts 'Creating users...'
-User.create!(name: 'Gaby', email: 'gaby@gmail.com', password: '123456')
-User.create!(name: 'izzy', email: 'izzy@gmail.com', password: '123456')
-User.create!(name: 'lucien', email: 'lucien@gmail.com', password: '123456')
-User.create!(name: 'ife', email: 'ife@gmail.com', password: '123456')
+User.create!(name: 'Gaby Martinez', email: 'gaby@gmail.com', password: '123456')
+User.create!(name: 'Izzy Brown', email: 'izzy@gmail.com', password: '123456')
+User.create!(name: 'Lucien George', email: 'lucien@gmail.com', password: '123456')
+User.create!(name: 'Ife Odugbesan', email: 'ife@gmail.com', password: '123456')
 puts 'Users created!'
 # photos = ['https://images.unsplash.com/photo-1528154291023-a6525fabe5b4?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a43bfc679e76d65767fa0f25c223eaec&auto=format&fit=crop&w=500&q=60', 'https://images.unsplash.com/photo-1534619039567-4db91b8d7e31?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=12bb20e846a433b36a0be8c1b166fe4e&auto=format&fit=crop&w=500&q=60', 'https://images.unsplash.com/photo-1512602110-67198e50f815?ixlib=rb-0.3.5&s=c11f4db2462e3099db163d05e2aaea7e&auto=format&fit=crop&w=500&q=60', 'https://images.unsplash.com/photo-1510272440556-215041fca05c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=3a5080d4a97908ca3282bcf16a90adf8&auto=format&fit=crop&w=500&q=60', 'https://images.unsplash.com/photo-1491316713428-0cbd516756a3?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=00fe20f52e16bd1e9b5c650d7b94ad2b&auto=format&fit=crop&w=500&q=60']
 
