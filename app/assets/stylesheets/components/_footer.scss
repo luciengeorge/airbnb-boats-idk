@@ -39,7 +39,7 @@
   border-radius: 50%;
   position: absolute;
   top: -75px;
-  left: 770px;
+  left: calc(50vw - 75px);
   text-align: center;
 
   h1 {
