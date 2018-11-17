@@ -70,7 +70,7 @@ class BoatsController < ApplicationController
 
   def search_filter
     if params[:category].present? || params[:length].present? || params[:capacity].present?
-      search = params[:location] + " " + params[:capacity] + " " + params[:length] + " " + params[:category]
+      search = params[:location] + " " + params[:capacity] + " " + params[:length]
       @boats = Boat.search_by_boat_info(search)
     end
   end
