@@ -1,15 +1,15 @@
 .banner {
   color: black;
-  height: 90vh;
+  height: 100vh;
   background-position: center;
   /* if you have a 70px navbar => height: calc(100vh - 70px); */
   background-size: cover !important;
   display: flex;
   align-items: center;
   justify-content: left;
-  margin-top: -69px;
-  width: 110%;
-  margin-left: -300px;
+  margin-top: -88px;
+  margin-left: -20px;
+  width: 110vw;
   z-index: 1;
 }
 .banner h1 {
@@ -27,12 +27,11 @@
 
 .form-home-page {
   background-color: transparent;
-  margin-left: 350px;
+  margin-left: 7vw;
 }
 
 .form-search-home {
   margin: 20px;
-  transform: rotate(3deg);
 }
 
 #location {
@@ -62,6 +61,4 @@
   height: 90vh;
   width: 110%;
   margin-left: -10px;
-  transform: rotate(-3deg) !important;
-
 }
