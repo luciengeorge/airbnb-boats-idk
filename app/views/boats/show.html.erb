@@ -58,10 +58,11 @@
           <div id="review-content">
             <% @boat.reviews.each do |review| %>
               <p>
-                <%= review.content %>
                 <% review.rating.times do %>
-                  <i class="fas fa-star" style="color: #FFE501"></i>
+                  <i class="fas fa-star" style="color: #E4BB24"></i>
                 <% end %>
+                <br>
+                <%= review.content %>
               </p>
             <% end %>
           </div>

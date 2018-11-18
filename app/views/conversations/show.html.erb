@@ -1,7 +1,7 @@
 <div class="wrapper">
   <div class="container">
     <div class="header-inbox">
-      <%= link_to "BACK", conversations_path, class:"back-to-conversations" %>
+      <%= link_to "BACK TO INBOX", conversations_path, class:"back-to-conversations" %>
       <div class="user-info-inbox">
         <div class="user-info-inbox-name">
           <h2 class="inbox-title text-center user-inbox">
@@ -19,7 +19,7 @@
             <% end %>
           </h2>
           <div class="recipient-name">
-            <p><%= recipient.name.capitalize %></p>
+            <p><%= recipient.name.upcase %></p>
           </div>
         </div>
       </div>
@@ -33,7 +33,7 @@
               <div class="message-div" style="">
                 <div class="message-right">
                   <p class="message-sender text-right">
-                    <%= message.body %>
+                    <%= message.body.upcase %>
                   </p>
                 </div>
               </div>
@@ -41,7 +41,7 @@
               <div class="message-div" style="">
                 <div class="message-left">
                   <p class="message-receiver text-left">
-                    <%= message.body %>
+                    <%= message.body.upcase %>
                   </p>
                 </div>
               </div>
@@ -53,7 +53,7 @@
             <%= f.text_area :body, class:"form-control" %>
             <%= f.text_field :user_id, value: current_user.id, type: "hidden" %>
             <%= button_tag(type: 'submit', class: "btn btn-homepage-small") do %>
-              Send <i class="fab fa-telegram-plane"></i>
+              SEND <i class="fab fa-telegram-plane"></i>
             <% end %>
           <% end %>
         </div>
