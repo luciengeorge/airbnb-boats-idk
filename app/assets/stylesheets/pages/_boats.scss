@@ -1,10 +1,10 @@
 .search-form-wrapper {
   height: 300px;
-  width: 110%;
+  width: 110vw;
   margin-left: -10px;
   background-color: #3D3B3C;
   transform: rotate(-3deg);
-  margin-top: -32px;
+  margin-top: -47px;
   display: flex;
   align-items: center;
   justify-content: space-around;
@@ -18,8 +18,13 @@
 .boats-search-form {
   transform: rotate(3deg) !important;
   border-radius: 3px;
-  margin-left: 430px;
+  margin: 20px auto 20px 15vw;
+}
 
+.index-search {
+  max-width: 450px;
+  height: 60px;
+  border-radius: 5px;
 }
 
 body {

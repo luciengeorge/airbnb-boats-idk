@@ -1,7 +1,7 @@
 // Specific CSS for your home-page
 .home-info-wrapper {
-  height: 500px;
-  width: 110%;
+  min-height: 500px;
+  width: 110vw;
   margin-left: -20px;
   background-color: #3D3B3C;
   transform: rotate(-3deg);
@@ -15,19 +15,22 @@
   box-shadow: 0px 0px 3px rgba(0,0,0,0.4);
 }
 
-.ports-info {
+.home-info-container {
   transform: rotate(3deg);
+}
+
+.ports-info {
   letter-spacing: 3px;
   line-height: 40px;
+  margin: 0px 20px;
 }
 
 .home-wrapper {
-  height: 700px;
-  width: 110%;
-  margin-left: -20px;
+  min-height: 700px;
+  width: 110vw;
+  margin-left: -5vw;
   background-color: white;
   transform: rotate(-3deg);
-  margin-top: -30px;
   display: flex;
   justify-content: space-around;
 }
@@ -35,9 +38,6 @@
 .card-container {
   display: flex;
   justify-content: space-around;
-  margin-top: 200px;
-}
-
-body {
-  background-color: white !important;
+  align-items: center;
+  margin-top: 20vh;
 }

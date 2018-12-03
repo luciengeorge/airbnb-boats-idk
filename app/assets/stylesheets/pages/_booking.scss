@@ -1,7 +1,12 @@
+.bookings-wrapper {
+  margin-top: 10vh;
+}
+
+
 .redbox {
   padding-left: 10px;
   background-color: transparent;
-  height: 20vh;
+  min-height: 20vh;
   display: flex;
   width: 100%;
   border: 0.5px solid gray;
@@ -15,7 +20,7 @@
   margin-top: 20px;
   flex-direction: column;
   border: 0.5px solid gray;
-  height: 50vh;
+  min-height: 50vh;
   border-radius: 3px;
 
 }
@@ -23,21 +28,16 @@
 #date {
   margin-top: 30px;
   padding-left: 10px;
-  // display: flex;
-  // flex-direction: initial;
-  // justify-content: space-around;
-
+  display: flex;
+  justify-content: space-around;
 }
 
-.date-date {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+.start-date {
+    text-align: center;
 }
 
-.headers-date {
-  display: flex;
-  justify-content: space-evenly;
+.end-date {
+    text-align: center;
 }
 
 #description {

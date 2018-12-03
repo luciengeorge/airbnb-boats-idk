@@ -19,15 +19,15 @@
     <div style="min-height: calc(100vh - 180px)">
       <%= render 'shared/navbar' %>
       <% if notice %>
-        <div class="margin-div alert-info" style="height: 148px;">
+        <div class="margin-div alert-info" style="height: 164px;">
           <%= render 'shared/flashes' %>
         </div>
       <% elsif alert %>
-        <div class="margin-div alert-warning" style="height: 148px;">
+        <div class="margin-div alert-warning" style="height: 164px;">
           <%= render 'shared/flashes' %>
         </div>
       <% else %>
-        <div class="margin-div" style="height: 148px;">
+        <div class="margin-div" style="height: 164px;">
           <%= render 'shared/flashes' %>
         </div>
       <% end %>

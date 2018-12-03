@@ -1,25 +1,25 @@
-<div class="wrapper">
+<div class="bookings-wrapper">
   <div class="container">
     <div class="row">
       <div class="redbox">
-        <h1>Your booking with PORTS has been successful.</h1>
+        <h1>YOUR BOOKING WITH <strong>PORTS</strong> HAS BEEN SUCCESSFUL.</h1>
         <p>BOOKED BY <strong><%= @booking.user.name.upcase %></strong></p>
       </div>
     </div>
     <div class="row">
       <div class="bluebox">
         <div id="date">
-          <div class="headers-date">
+          <div class="start-date">
             <div>
             <p>YOUR JOURNEY STARTS ON </p>
             </div>
             <div>
-              <p>YOUR JOURNEY ENDS ON </p>
+              <strong><%= @booking.start_date.strftime('%b %d, %Y').upcase %> </strong>
             </div>
           </div>
-          <div class="date-date">
+          <div class="end-date">
             <div>
-              <strong><%= @booking.start_date.strftime('%b %d, %Y').upcase %> </strong>
+              <p>YOUR JOURNEY ENDS ON </p>
             </div>
             <div>
              <strong><%= @booking.end_date.strftime('%b %d, %Y').upcase %></strong>
@@ -30,11 +30,11 @@
         <div id="description">
           <p><strong>PORT OF DEPARTURE:</strong> <%= @booking.boat.location.upcase %></p>
           <p><strong>NUMBER OF GUESTS:</strong> <%= @booking.guests %></p>
-          <p> YOU HAVE SUCESSFULLY BOOKED BOAT:  <em><%= @booking.boat.name.upcase %></em></p>
+          <p> YOU HAVE SUCESSFULLY BOOKED BOAT:  <strong><em><%= @booking.boat.name.upcase %></em></strong></p>
         </div>
         <div id="pricing">
-          <p><strong>TOTAL PRICE:</strong> $<%= @booking.boat.price_per_week %></p>
-          <em><p id="thankyou">Have the most amazing trip from everyone here at PORTS</p></em>
+          <p><strong>TOTAL PRICE:</strong> £<%= number_with_delimiter(@boat.price_per_week, delimiter: ',') %></p>
+          <em><p id="thankyou">HAVE THE MOST AMAZING TRIP FROM EVERYONE HERE AT <strong>PORTS</strong>.</p></em>
         </div>
       </div>
     </div>
